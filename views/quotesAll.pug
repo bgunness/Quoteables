@@ -4,6 +4,10 @@ html(lang='en')
         title Quoteables
         link(rel='stylesheet', href='/static/stylesheets/style.css')
     body
+        header
+            .newQuoteButton
+                a(href="new")
+                    button(type="submit" name="newQuote") New 
         each quote in quotes
             quote
                 div#quotesAll

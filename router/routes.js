@@ -25,7 +25,7 @@ router.get('/new', asyncHandler(async (req, res) => {
 
 router.post('/new-submit', asyncHandler(async (req, res) => {
     const quote = await Quote.create(req.body);
-    res.redirect('/quotes/' + quote.id)
+    res.redirect('/')
 }));
 
 router.post('/delete', asyncHandler(async(req, res) => {
@@ -34,7 +34,6 @@ router.post('/delete', asyncHandler(async(req, res) => {
     if (quote) {
         await quote.destroy();
     }
-    // await Quote.destroy
     res.redirect('/');
 }));
 
