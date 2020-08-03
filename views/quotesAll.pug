@@ -9,4 +9,6 @@ html(lang='en')
                 div#quotesAll
                     h3= quote.body
                     h4= quote.source
+                    form(action="/delete", method="post")
+                        button(type="submit" name="delete" value=`${quote.id}`) Delete
                     hr

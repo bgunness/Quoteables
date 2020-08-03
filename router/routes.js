@@ -15,7 +15,7 @@ function asyncHandler(cb) {
 }
 
 router.get('/', asyncHandler(async (req, res) => {
-    const quotes = await Quote.findAll();
+    const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
     res.render('quotesAll', {quotes})
 }));
 
@@ -28,6 +28,16 @@ router.post('/new-submit', asyncHandler(async (req, res) => {
     res.redirect('/quotes/' + quote.id)
 }));
 
+router.post('/delete', asyncHandler(async(req, res) => {
+    const quote = await Quote.findByPk(req.body.delete)
+    console.log(quote);
+    if (quote) {
+        await quote.destroy();
+    }
+    // await Quote.destroy
+    res.redirect('/');
+}));
+
 router.get('/yeezy', asyncHandler(async (req, res) => {
     const {quote} = await records.getKanyeQuote();
     const source = 'Omari West, K.';
@@ -35,19 +45,19 @@ router.get('/yeezy', asyncHandler(async (req, res) => {
     res.render('index', {quote, source, url});
 }));
 
-router.get('/', asyncHandler(async (req, res) => {
-    res.redirect('/random');
-}));
+// router.get('/', asyncHandler(async (req, res) => {
+//     res.redirect('/random');
+// }));
 
-router.get('/random', asyncHandler(async (req, res) => {
-    const record = await records.randQuote();
-    const {quote} = record;
-    const {source} = record;
-    const url = req.originalUrl;
+// router.get('/random', asyncHandler(async (req, res) => {
+//     const record = await records.randQuote();
+//     const {quote} = record;
+//     const {source} = record;
+//     const url = req.originalUrl;
     
-    // res.json(quote);
-    res.render('index', {quote, source, url});
-}));
+//     // res.json(quote);
+//     res.render('index', {quote, source, url});
+// }));
 
 router.get('/quotes/:id', asyncHandler(async (req, res) => {
     const quote = await Quote.findByPk(req.params.id);
