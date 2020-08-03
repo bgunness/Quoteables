@@ -1,0 +1,12 @@
+doctype html
+html(lang='en')
+    head
+        title Quoteables
+        link(rel='stylesheet', href='/static/stylesheets/style.css')
+    body
+        each quote in quotes
+            quote
+                div#quotesAll
+                    h3= quote.body
+                    h4= quote.source
+                    hr

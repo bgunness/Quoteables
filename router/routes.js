@@ -14,6 +14,11 @@ function asyncHandler(cb) {
     }
 }
 
+router.get('/', asyncHandler(async (req, res) => {
+    const quotes = await Quote.findAll();
+    res.render('quotesAll', {quotes})
+}));
+
 router.get('/new', asyncHandler(async (req, res) => {
     res.render('new-page', {quote: {}});
 }));
@@ -45,8 +50,8 @@ router.get('/random', asyncHandler(async (req, res) => {
 }));
 
 router.get('/quotes/:id', asyncHandler(async (req, res) => {
-    const {quote} = await records.getQuote(req.params.id);
-    res.json(quote);
+    const quote = await Quote.findByPk(req.params.id);
+    res.render("quote", {quote})
 }));
 
 module.exports = router;

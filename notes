@@ -1,0 +1,23 @@
+
+8/3/2020
+    Want to add a page that lists all the quotes currently stored in the database
+        - create new view
+        - create route 
+        - create function to return quotes from database
+            - ensure ID is returned and passed to view for delete button
+        - call function in GET request
+        - pass to view 
+    Want to add a function to delete quotes from database
+        - ? utilizes view that displays all quotes
+            - select 'delete' button next to quotes
+            -  ? button has id of quote it's attached to
+        - create POST route to view
+            - destroy quote with id matching button pushed
+            - update button id's to match quote it's attached to (dynamic) 
+
+            for each quote printed, create button with matching id
+                button id = quote.id (pk) 
+            when button clicked, destroy quote, remove entry, reassign button values
+
+            or instead of dyanmic button id, child button disappears when quote destroyed? (parent is 
+                either div)

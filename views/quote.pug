@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+    head
+        title Quoteables
+        link(rel='stylesheet', href='/static/stylesheets/style.css')
+    body
+        h2.quote "#{quote.body}"
+        h3.source - #{quote.source}
+
+        //- if url == '/yeezy'
+        //-     div.buttonsBox
+        //-         a(href='/yeezy')
+        //-             button.buttons(type='submit') Moar Yeezy
+        //-         a(href='/random')
+        //-             button.buttons(type='submit') Random Quote
+        //- else if url == '/random'
+        //-     div.buttonsBox
+        //-         a(href='/yeezy')
+        //-             button.buttons(type='submit') Yeezy Quote
+        //-         a(href='/random')
+        //-             button.buttons(type='submit') Moar Quotes
