@@ -14,31 +14,37 @@ function asyncHandler(cb) {
     }
 }
 
+/* Get home page */
 router.get('/', asyncHandler(async (req, res) => {
     const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
     res.render('quotesAll', {quotes})
 }));
 
+/* Get specified quote to edit */
 router.get('/:id/edit', asyncHandler(async(req, res) => {
     const quote = await Quote.findByPk(req.params.id);
     res.render('edit', {quote});
 }));
 
+/* Post newly edited quote */
 router.post('/:id/edit', asyncHandler(async(req, res) => {
     const quote = await Quote.findByPk(req.params.id);
     await quote.update(req.body);
     res.redirect('/');
 }));
 
+/* Get new quote form */
 router.get('/new', asyncHandler(async (req, res) => {
     res.render('new-page', {quote: {}});
 }));
 
+/* Post newly created quote */
 router.post('/new-submit', asyncHandler(async (req, res) => {
     const quote = await Quote.create(req.body);
     res.redirect('/')
 }));
 
+/* Delete a quote */
 router.post('/delete', asyncHandler(async(req, res) => {
     const quote = await Quote.findByPk(req.body.delete)
     console.log(quote);
@@ -48,6 +54,7 @@ router.post('/delete', asyncHandler(async(req, res) => {
     res.redirect('/');
 }));
 
+/* Get Kanye quotes from API */
 router.get('/yeezy', asyncHandler(async (req, res) => {
     const {quote} = await records.getKanyeQuote();
     const source = 'Omari West, K.';
@@ -55,23 +62,26 @@ router.get('/yeezy', asyncHandler(async (req, res) => {
     res.render('index', {quote, source, url});
 }));
 
-// router.get('/', asyncHandler(async (req, res) => {
-//     res.redirect('/random');
-// }));
-
-// router.get('/random', asyncHandler(async (req, res) => {
-//     const record = await records.randQuote();
-//     const {quote} = record;
-//     const {source} = record;
-//     const url = req.originalUrl;
-    
-//     // res.json(quote);
-//     res.render('index', {quote, source, url});
-// }));
-
+/* Get a specific quote */
 router.get('/quotes/:id', asyncHandler(async (req, res) => {
     const quote = await Quote.findByPk(req.params.id);
     res.render("quote", {quote})
 }));
+
+/* Below code was used before implementation of SQL database */
+
+    // router.get('/', asyncHandler(async (req, res) => {
+    //     res.redirect('/random');
+    // }));
+
+    // router.get('/random', asyncHandler(async (req, res) => {
+    //     const record = await records.randQuote();
+    //     const {quote} = record;
+    //     const {source} = record;
+    //     const url = req.originalUrl;
+        
+    //     // res.json(quote);
+    //     res.render('index', {quote, source, url});
+    // }));
 
 module.exports = router;

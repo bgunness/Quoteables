@@ -5,16 +5,15 @@ html(lang='en')
         link(rel='stylesheet', href='/static/stylesheets/style.css')
     body
         header
-            .newQuoteButton
                 a(href="new")
-                    button(type="submit" name="newQuote") New 
+                    button.buttons(type="submit" name="newQuote") New 
         each quote in quotes
             quote
                 div#quotesAll
                     h3= quote.body
                     h4= quote.source
                     form(action="/delete", method="post")
-                        button(type="submit" name="delete" value=`${quote.id}`) Delete
+                        button.buttons(type="submit" name="delete" value=`${quote.id}`) Delete
                     a(href=`/${quote.id}/edit`)
-                        button(type="submit" name="edit") Edit
+                        button.buttons(type="submit" name="edit") Edit
                     hr
