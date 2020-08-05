@@ -19,6 +19,17 @@ router.get('/', asyncHandler(async (req, res) => {
     res.render('quotesAll', {quotes})
 }));
 
+router.get('/:id/edit', asyncHandler(async(req, res) => {
+    const quote = await Quote.findByPk(req.params.id);
+    res.render('edit', {quote});
+}));
+
+router.post('/:id/edit', asyncHandler(async(req, res) => {
+    const quote = await Quote.findByPk(req.params.id);
+    await quote.update(req.body);
+    res.redirect('/');
+}));
+
 router.get('/new', asyncHandler(async (req, res) => {
     res.render('new-page', {quote: {}});
 }));
