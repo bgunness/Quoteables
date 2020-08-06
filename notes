@@ -28,3 +28,6 @@
         - create edit page
             - create save button
                 - clicking will POST new data (same as new quote submit?)
+8/6/2020
+    Want to change all CSS to Bootstrap library
+    Want to update content of quotes
