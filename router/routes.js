@@ -15,10 +15,15 @@ function asyncHandler(cb) {
 }
 
 /* Get home page */
-router.get('/', asyncHandler(async (req, res) => {
-    const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
-    res.render('quotesAll', {quotes})
-}));
+
+router.get('/', asyncHandler(async(req, res) => {
+    res.render('index');
+}))
+
+// router.get('/', asyncHandler(async (req, res) => {
+//     const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
+//     res.render('quotesAll', {quotes})
+// }));
 
 /* Get specified quote to edit */
 router.get('/:id/edit', asyncHandler(async(req, res) => {
@@ -55,11 +60,11 @@ router.post('/delete', asyncHandler(async(req, res) => {
 }));
 
 /* Get Kanye quotes from API */
-router.get('/yeezy', asyncHandler(async (req, res) => {
+router.get('/kanye', asyncHandler(async (req, res) => {
     const {quote} = await records.getKanyeQuote();
     const source = 'Omari West, K.';
     const url = req.originalUrl;
-    res.render('index', {quote, source, url});
+    res.render('kanye', {quote, source, url});
 }));
 
 /* Get a specific quote */

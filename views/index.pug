@@ -3,24 +3,36 @@ html(lang='en')
     head
         title Quoteables
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
+        link(rel="stylesheet" type ="text/html" href="../public/stylesheets/bootstrap-edit.css")
     body
-        .container.min-vh-100.d-flex.justify-content-center.flex-column
-                .row
-                    .col.col-sm.text-center
-                        h2 "#{quote}"
-                .row
-                    .col.col-sm.text-center.py-5
-                        h3.source - #{source}
-                .row
-                    .col.col-sm.text-center.mt-5
-                        if url == '/yeezy'
-                            div(class="btn-group" role="group")
-                                a(href='/yeezy').btn.btn-secondary.my-auto.p-3 Mo' Yeezy
-                                a(href='/random').btn.btn-secondary.my-auto.p-3 Random Quote
-                        else if url == '/random'
-                            div(class="btn-group" role="group")
-                                a(href='/yeezy').btn.btn-secondary.my-auto.p-3 Yeezy
-                                a(href='/random').btn.btn-secondary.my-auto.p-3 More Quotes
+        .row
+            .col
+                .jumbotron.jumbotron-fluid
+                    .container
+                        h1.display-4 Quoteables
+                        p.lead For when life gets you down.
+        .container
+            .row.my-5
+                .col
+                    .card.bg-dark.text-white
+                        img.card-img(src='https://picsum.photos/id/338/180/250' alt='Card image')
+                        .card-img-overlay
+                            h5.card-title.display-4 Kanye West 
+                            p.card-text.lead (Quotes may contain inappropriate language!)
+                            a(href="/kanye" class="stretched-link") 
+                .col
+                    .card.bg-dark.text-white
+                        img.card-img(src='https://picsum.photos/id/1011/180/250' alt='Card image')
+                        .card-img-overlay
+                            h5.card-title.text-dark.display-4 Advice 
+                            p.card-text 
+                .col
+                    .card.bg-dark.text-white
+                        img.card-img(src='https://picsum.photos/id/1020/180/250' alt='Card image')
+                        .card-img-overlay
+                            h5.card-title.text-dark.display-4 Inspiration 
+                            p.card-text 
+            //- footer
     script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
     script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous")

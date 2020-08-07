@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const Quote = require('./models').Quote;
+const mdbootstrap = require('mdbootstrap');
 
 const routes = require('./router/routes');
 
