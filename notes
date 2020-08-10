@@ -36,3 +36,19 @@
         - inspirational (SQL)
             - able to be edited/added/deleted
     **investigate href of styleB sheet, why is full link necessary?**
+8/10/2020
+    Want to make consistent buttons on each of the 3 pages
+        - Second button is always home button
+        - first button is refresh/new random quote
+            - if (URL == '/kanye' || 'advice' || 'inspiration') {
+                buttonText = "Mo' " + URL;
+            }
+        - in routes, run a function to clean url before passing to template
+
+        - ? third button to 'view all' if available with id's
+    Want to add small animations to CSS (button hover, load in, etc.)
+    ? Want to add 'doge' meme to advice page
+        - CSS fade in of meme divs scattered around page
+            - higher z index
+            - fixed position (out of page flow)
+                - some % of vw & vh
