@@ -1,6 +1,6 @@
-/* Remove forward slash from URL */
+/* Remove forward slashes from URL */
 function cleanURL(url) {
-    return url = url.replace('/', '');
+    return url.split('/', 2).pop();
 }
 
 module.exports = {cleanURL};
