@@ -3,6 +3,7 @@ html(lang='en')
     head
         title Quoteables
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
+        link(rel="stylesheet" href="/static/stylesheets/styleB.css")
     body
         .container.min-vh-100.d-flex.justify-content-center.flex-column
                 .row
@@ -13,14 +14,10 @@ html(lang='en')
                         h3.source #{source}
                 .row
                     .col.col-sm.text-center.mt-5
-                        if url == '/kanye'
+                        if url == '/kanye' || '/advice'
                             div(class="btn-group" role="group")
-                                a(href='/kanye').btn.btn-secondary.my-auto.p-3 Mo' Yeezy
-                                a(href='/random').btn.btn-secondary.my-auto.p-3 Random Quote
-                        else if url == '/random'
-                            div(class="btn-group" role="group")
-                                a(href='/Kanye').btn.btn-secondary.my-auto.p-3 Yeezy
-                                a(href='/random').btn.btn-secondary.my-auto.p-3 More Quotes
+                                a(href=`${url}`).btn.btn-secondary.my-auto.p-3.capitalize Mo' #{url}
+                                a(href='/').btn.btn-secondary.my-auto.p-3 Home
     script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
     script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous")
