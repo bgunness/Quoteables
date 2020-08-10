@@ -19,7 +19,24 @@ function getKanyeQuote() {
     })
 }
 
-module.exports = {getKanyeQuote};
+function getAdvice() {
+    return new Promise((resolve, reject) => {
+        var request = https.get('https://api.adviceslip.com/advice', (res) => {
+            var body = "";
+
+            res.on('data', (chunk) => {
+                body += chunk;
+            })
+
+            res.on('end', () => {
+                advice = JSON.parse(body);
+                resolve(advice);
+            })
+        })
+    })
+}
+
+module.exports = {getKanyeQuote, getAdvice};
 
 /* Below code was used before implementation of SQL database */
 

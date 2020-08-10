@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Quote = require('../models').Quote;
 const records = require('../records');
+const helpers = require('../helpers');
+
 
 //  Async Handler -- inserts try/catch blocks
 function asyncHandler(cb) {
@@ -15,7 +17,6 @@ function asyncHandler(cb) {
 }
 
 /* Get home page */
-
 router.get('/', asyncHandler(async(req, res) => {
     res.render('index');
 }))
@@ -24,6 +25,26 @@ router.get('/', asyncHandler(async(req, res) => {
 //     const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
 //     res.render('quotesAll', {quotes})
 // }));
+
+/* Get Kanye quotes from API */
+router.get('/kanye', asyncHandler(async(req, res) => {
+    const {quote} = await records.getKanyeQuote();
+    const source = 'Omari West, K.';
+    const url = helpers.cleanURL(req.originalUrl);
+    res.render('kanye', {quote, source, url});
+}));
+
+/* Get random advice page */
+router.get('/advice', asyncHandler(async(req, res) => {
+    const advice = await records.getAdvice();
+    const url = helpers.cleanURL(req.originalUrl);
+    res.render('advice', {advice, url});
+}));
+
+/* Get inspiration page */
+router.get('/inspiration', asyncHandler(async(req, res) => {
+    res.render();
+}));
 
 /* Get specified quote to edit */
 router.get('/:id/edit', asyncHandler(async(req, res) => {
@@ -57,14 +78,6 @@ router.post('/delete', asyncHandler(async(req, res) => {
         await quote.destroy();
     }
     res.redirect('/');
-}));
-
-/* Get Kanye quotes from API */
-router.get('/kanye', asyncHandler(async (req, res) => {
-    const {quote} = await records.getKanyeQuote();
-    const source = 'Omari West, K.';
-    const url = req.originalUrl;
-    res.render('kanye', {quote, source, url});
 }));
 
 /* Get a specific quote */
