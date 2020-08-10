@@ -3,6 +3,7 @@ const router = express.Router();
 const Quote = require('../models').Quote;
 const records = require('../records');
 const helpers = require('../helpers');
+const { sequelize } = require('../models');
 
 
 //  Async Handler -- inserts try/catch blocks
@@ -42,8 +43,21 @@ router.get('/advice', asyncHandler(async(req, res) => {
 }));
 
 /* Get inspiration page */
+router.get('/inspiration/:id', asyncHandler(async(req, res) => {
+    // if (req.params.id == '1') {
+    //     const quote = await Quote.findByPk(req.params.id);
+    // } else {
+    //     const quote = await Quote.findByPk(req.params.id);
+    // }
+    const quote = await Quote.findByPk(req.params.id);
+    const url = helpers.cleanURL(req.originalUrl);
+    res.render('inspiration', {quote, url})
+}))
+
 router.get('/inspiration', asyncHandler(async(req, res) => {
-    res.render();
+    const quote = await Quote.findOne({order: sequelize.random()})
+    const url = helpers.cleanURL(req.originalUrl);
+    res.render('inspiration', {quote, url});
 }));
 
 /* Get specified quote to edit */
