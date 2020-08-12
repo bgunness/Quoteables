@@ -52,3 +52,36 @@
             - higher z index
             - fixed position (out of page flow)
                 - some % of vw & vh
+8/12/2020
+    Want to create 'view all' page for inspiration quotes
+        - 3 panels, flex-direction = row
+            - nav buttons
+                - flex-direction = col
+                - one row, one col
+                - centered in container, mid page
+                - fixed
+                - ? searchbar
+                    - search for quote by text/id
+            - quotes
+                - flex-direction = col
+                    - same format as individual quote page
+            - edit, delete, new buttons
+                - ? if fixed 
+                    - quote is selectable
+                        - button exists already with unique id, but is hidden
+                        - jquery to reveal button (flip card on select?)
+                    - when quote selected, information passed through button is changed
+                        - ensures when taken to edit page, currently selected quote pre-populates input fields
+                - if not fixed
+                    - each quote has own edit and del button
+                - distinguishable 'new' button -- visually separated 
+    Want to create edit quote page
+        - ? revamp the previously created 
+    Alter nav
+        - add header and nav to each page
+            - links to each section
+            - home or clicking title takes home
+        - remove home button at bottom of page
+    Want to add description section under images on index
+        - on click, dynamically load paragraph of container width beneath photo, with link to that section
+    
