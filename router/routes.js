@@ -60,6 +60,12 @@ router.get('/inspiration', asyncHandler(async(req, res) => {
     res.render('inspiration', {quote, url});
 }));
 
+/* Get all inspirational quotes */
+router.get('/inspiration-all', asyncHandler(async(req, res) => {
+    const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
+    res.render('inspiration-all', {quotes})
+}))
+
 /* Get specified quote to edit */
 router.get('/:id/edit', asyncHandler(async(req, res) => {
     const quote = await Quote.findByPk(req.params.id);
