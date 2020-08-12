@@ -1,3 +1,9 @@
+/* Adds visual testing parameters */
+.test {
+    border: 2px solid red;
+    
+}
+
 .card {
     border: none;
 }
