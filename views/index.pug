@@ -7,27 +7,24 @@ html(lang='en')
     body
         .row
             .col
-                .jumbotron.jumbotron-fluid
-                    .container
-                        h1.display-4 Quoteables
-                        p.lead For when life gets you down.
+                include includes/header
         .container
             .row.my-5
-                .col
+                .col.m-3
                     .card.bg-dark.text-white
                         img.card-img(src='https://picsum.photos/id/338/180/250' alt='Kanye West')
                         .card-img-overlay
                             h5.card-title.display-4 Kanye West 
                             p.card-text.lead (Quotes may contain inappropriate language!)
                             a(href="/kanye" class="stretched-link") 
-                .col
+                .col.m-3
                     .card.bg-dark.text-white
                         img.card-img(src='https://picsum.photos/id/1011/180/250' alt='Advice')
                         .card-img-overlay
                             h5.card-title.text-dark.display-4 Advice 
                             p.card-text 
                             a(href="/advice" class="stretched-link")
-                .col
+                .col.m-3
                     .card.bg-dark.text-white
                         img.card-img(src='https://picsum.photos/id/1020/180/250' alt='Inspiration')
                         .card-img-overlay
