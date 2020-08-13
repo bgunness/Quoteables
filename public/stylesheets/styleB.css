@@ -16,10 +16,28 @@
     margin-bottom: 0;
 }
 
-.quote-card:hover {
-    background-color: rgba(255, 160, 122, 0.212);
+.overlay {
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgb(122, 175, 255);
+    z-index: 10;
+    height: 100px;
+    display: none;
+    position: absolute;
+    /* position: relative; */
+    /* top: 0; */
+    /* left: 0; */
+    width: 95%;
 }
 
-.hidden {
-    background-color: lightsalmon;
+.overlay h3 {
+    margin: 0;
+}
+/* 
+.yes {
+    position: relative;
+} */
+
+quote {
+    z-index: 0;
 }

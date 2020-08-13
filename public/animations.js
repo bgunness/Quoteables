@@ -1,22 +1,23 @@
-let hidden = document.querySelectorAll('.hidden');
-var quotes = document.querySelectorAll('quote');
-
 $(document).ready(() => {
-    $(hidden).hide();
+    $('.overlay').hide();
 
     $('.yes').click(function() {                                        //Cannot be arrow function for 'this' to work!
-        var hiddenDiv = $(this).children(':first-child');
-        $(hiddenDiv).slideDown(1000);
+        // $('.overlay').hide(500);
+        // var offset = $(this).offset();
+        // var hiddenDiv = $(this).children('.overlay');
+        // $(hiddenDiv).css({'top':-50})
+        // $(hiddenDiv).show(750);
+
+        $('.overlay').hide(500);
+        var offset = $(this).offset();
+        var hiddenDiv = $(this).find('.overlay');
+        // $(hiddenDiv).css({'top':-50})
+        $(hiddenDiv).show(750);
     });
 })
 
 /*
-    - click on quote
-        - id of div returned
-    - child of div with class 'hidden' revealed
-
-    or
-
-    - click on quote
-    - first child revealed
+    - position fixed
+    - high z index
+    - top/left/right/bottom coords match parent (class 'yes')
 */

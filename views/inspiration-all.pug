@@ -12,15 +12,17 @@ html(lang='en')
                 .container.min-vh-100.d-flex.justify-content-center.flex-column
                     each quote in quotes
                         quote(class="yes" id=`${quote.dataValues.id}`)
-                                .hidden
-                                    h3 bazinga
                                 div(class="row")
                                     .col.col-sm.text-center
                                         h2(class="quote") "#{quote.dataValues.body}"
                                 .row
-                                    .col.col-sm.text-center.py-5
+                                    .col.col-sm.text-center.pt-5
                                         h3.source #{quote.dataValues.source}
-                                        hr
+                                    .overlay
+                                        h3 bazinga
+                                //- .overlay
+                                //-     h3 bazinga
+                                hr
             .col.test
     script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
     script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous")
