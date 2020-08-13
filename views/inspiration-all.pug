@@ -11,12 +11,12 @@ html(lang='en')
             .col.test
                 .container.min-vh-100.d-flex.justify-content-center.flex-column
                     each quote in quotes
-                        quote
-                                div.hidden
+                        quote(class="yes" id=`${quote.dataValues.id}`)
+                                .hidden
                                     h3 bazinga
                                 div(class="row")
                                     .col.col-sm.text-center
-                                        h2(class="quote" data-target=`${quote.dataValues.id}`) "#{quote.dataValues.body}"
+                                        h2(class="quote") "#{quote.dataValues.body}"
                                 .row
                                     .col.col-sm.text-center.py-5
                                         h3.source #{quote.dataValues.source}
