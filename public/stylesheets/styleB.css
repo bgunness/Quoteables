@@ -24,20 +24,14 @@
     height: 100px;
     display: none;
     position: absolute;
-    /* position: relative; */
-    /* top: 0; */
-    /* left: 0; */
     width: 95%;
 }
 
 .overlay h3 {
     margin: 0;
 }
-/* 
-.yes {
-    position: relative;
-} */
 
-quote {
-    z-index: 0;
+.modal-dialog {
+    opacity: 1;
+    background-color: ivory;
 }

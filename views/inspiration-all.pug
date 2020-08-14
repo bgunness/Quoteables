@@ -5,6 +5,18 @@ html(lang='en')
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
         link(rel="stylesheet" href="/static/stylesheets/styleB.css")
     body
+        #exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+            .modal-dialog.modal-dialog-centered.flex-column(role='document')
+                .modal-content
+                .modal-header
+                    h5#exampleModalLongTitle.modal-title Edit Quote
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true')
+                .modal-body
+                    p
+                .modal-footer
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button') Save changes
         include includes/header
         .row.test
             .col.d-flex.flex-column.justify-content-center.align-items-center.test
@@ -12,6 +24,7 @@ html(lang='en')
                 .container.min-vh-100.d-flex.justify-content-center.flex-column
                     each quote in quotes
                         quote(class="yes" id=`${quote.dataValues.id}`)
+                            form
                                 div(class="row")
                                     .col.col-sm.text-center
                                         h2(class="quote") "#{quote.dataValues.body}"
@@ -19,12 +32,10 @@ html(lang='en')
                                     .col.col-sm.text-center.pt-5
                                         h3.source #{quote.dataValues.source}
                                     .overlay
-                                        h3 bazinga
-                                //- .overlay
-                                //-     h3 bazinga
-                                hr
+                                        button(type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" data-asdf=`${quote.dataValues.body}`) Edit
+                            hr
             .col.test
-    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
+script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
     script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous")
     script(src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous")
