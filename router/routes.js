@@ -69,7 +69,9 @@ router.get('/inspiration-all', asyncHandler(async(req, res) => {
 // wip
 router.post('/inspiration-all', asyncHandler(async(req, res) => {
     const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
-    res.render('inspiration-all', {quotes})
+    const quote = await Quote.findByPk(req.body.id);
+    await quote.update(req.body);
+    res.redirect('inspiration-all')
 }))
 
 /* Get specified quote to edit */

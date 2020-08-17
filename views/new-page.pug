@@ -4,7 +4,7 @@ html(lang='en')
         title Quoteables
         link(rel='stylesheet', href='/static/stylesheets/style.css')
     body
-        form.quoteSubmission(action="/new-submit", method="post")
+        form.quoteSubmission(action="/inspiration-all", method="post")
             input(type="text", name="body" placeholder="Quote ..." value=quote.body)
             input(type="text", name="source" placeholder="Source ..." value=quote.source)
             input(type="submit")

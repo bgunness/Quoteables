@@ -39,12 +39,20 @@
     width: 100%;
 }
 
+.modal-body button{
+    align-self: center;
+}
+
 .modal-body .input-body {
     min-height: 200px;
 }
 
 .modal-dialog-centered {
     justify-content: center;
+}
+
+.modal button {
+    margin-top: 1rem;   
 }
 
 .input-source {

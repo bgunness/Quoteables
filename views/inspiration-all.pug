@@ -12,19 +12,30 @@ html(lang='en')
                         h5#exampleModalLongTitle.modal-title Edit Quote
                         button.close(type='button', data-dismiss='modal', aria-label='Close')
                         span(aria-hidden='true')
-                    .modal-body
-                        //- form.quoteSubmission(action="/new-submit", method="post")
-                        .input-group
-                            .input-group-prepend
-                                span(class="input-group-text") Body
-                            textarea(class="form-control input-body" placeholder="Body of Quote ..." aria-label="Body text")
-                        .input-group
-                            .input-group-prepend
-                                span(class="input-group-text") Source
-                            textarea(class="form-control input-source" placeholder="Source of Quote ..." aria-label="Source text")
-                    .modal-footer
-                        button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-                        button.btn.btn-primary(type='button') Save changes
+                    .modal-body.d-flex.flex-column
+                        form(action="/inspiration-all" method="post")
+                            .input-group
+                                .input-group-prepend
+                                    span(class="input-group-text") Body
+                                textarea(class="form-control input-body" name="body" placeholder="Body of Quote ..." aria-label="Body text" value="body")
+                            .input-group
+                                .input-group-prepend
+                                    span(class="input-group-text") Source
+                                textarea(class="form-control input-source" name="source" placeholder="Source of Quote ..." aria-label="Source text")
+                            input#quoteID(type="hidden" name="id")
+                            button.btn.btn-primary.modal-submit-btn(type='submit') Save changes
+                            button.btn.btn-secondary.modal-close-btn(type='button', data-dismiss='modal') Close
+                        //- form#editQuote(action="/inspiration-all" method="post")
+                        //-     .input-group
+                        //-         .input-group-prepend
+                        //-             span(class="input-group-text") Body
+                        //-         textarea(class="form-control input-body" form="editQuote" placeholder="Body of Quote ..." aria-label="Body text" value="body")
+                        //-     .input-group
+                        //-         .input-group-prepend
+                        //-             span(class="input-group-text") Source
+                        //-         textarea(class="form-control input-source" placeholder="Source of Quote ..." aria-label="Source text")
+                        //-     button.btn.btn-primary.modal-submit-btn(type='submit') Save changes
+                        //-     button.btn.btn-secondary.modal-close-btn(type='button', data-dismiss='modal') Close
         include includes/header
         .row.test
             .col.d-flex.flex-column.justify-content-center.align-items-center.test
@@ -32,7 +43,8 @@ html(lang='en')
                 .container.min-vh-100.d-flex.justify-content-center.flex-column
                     each quote in quotes
                         quote(class="yes")
-                            form
+                            //- form element?
+                            form 
                                 div(class="row")
                                     .col.col-sm.text-center
                                         h2(class="quote") "#{quote.dataValues.body}"

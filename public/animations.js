@@ -12,11 +12,12 @@ $(document).ready(() => {
 });
 
 $('#exampleModalCenter').on('show.bs.modal', function (event) {
-    console.log('hello');
     var button = $(event.relatedTarget)
     var body = button.data('body')
     var source = button.data('source')
+    var id = button.attr('id')
     var modal = $(this)
     modal.find('.input-body').val(body)
     modal.find('.input-source').val(source)
-    })
+    modal.find('#quoteID').val(id);
+})
