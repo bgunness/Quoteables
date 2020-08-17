@@ -8,23 +8,23 @@ html(lang='en')
         #exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
             .modal-dialog.modal-dialog-centered.flex-column(role='document')
                 .modal-content
-                .modal-header
-                    h5#exampleModalLongTitle.modal-title Edit Quote
-                    button.close(type='button', data-dismiss='modal', aria-label='Close')
-                    span(aria-hidden='true')
-                .modal-body
-                    //- form.quoteSubmission(action="/new-submit", method="post")
-                    .input-group
-                        //- .input-group-prepend
-                        //-     span(class="input-group-text") Body
-                        textarea(class="form-control input-body" aria-label="With textarea")
-                    .input-group
-                        .input-group-prepend
-                            span(class="input-group-text") Source
-                        textarea(class="form-control input-source" aria-label="With textarea")
-                .modal-footer
-                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-                    button.btn.btn-primary(type='button') Save changes
+                    .modal-header
+                        h5#exampleModalLongTitle.modal-title Edit Quote
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true')
+                    .modal-body
+                        //- form.quoteSubmission(action="/new-submit", method="post")
+                        .input-group
+                            .input-group-prepend
+                                span(class="input-group-text") Body
+                            textarea(class="form-control input-body" placeholder="Body of Quote ..." aria-label="Body text")
+                        .input-group
+                            .input-group-prepend
+                                span(class="input-group-text") Source
+                            textarea(class="form-control input-source" placeholder="Source of Quote ..." aria-label="Source text")
+                    .modal-footer
+                        button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                        button.btn.btn-primary(type='button') Save changes
         include includes/header
         .row.test
             .col.d-flex.flex-column.justify-content-center.align-items-center.test

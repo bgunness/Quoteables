@@ -31,18 +31,23 @@
     margin: 0;
 }
 
-.modal-dialog {
-    /* opacity: 1; */
-    pointer-events: auto;
-    background-color: ivory;
+.input-group-prepend {
+    width: 15%;
 }
 
-.modal-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.input-group-text {
+    width: 100%;
 }
 
 .modal-body .input-body {
     min-height: 200px;
+}
+
+.modal-dialog-centered {
+    justify-content: center;
+}
+
+.input-source {
+    max-height: 38px;
+    resize: none;
 }
