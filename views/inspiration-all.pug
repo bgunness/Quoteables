@@ -44,15 +44,14 @@ html(lang='en')
                     each quote in quotes
                         quote(class="yes")
                             //- form element?
-                            form 
-                                div(class="row")
-                                    .col.col-sm.text-center
-                                        h2(class="quote") "#{quote.dataValues.body}"
-                                .row
-                                    .col.col-sm.text-center.pt-5
-                                        h3.source #{quote.dataValues.source}
-                                    .overlay
-                                        button(type="button" class="btn btn-primary btn-edit" id=`${quote.dataValues.id}` data-toggle="modal" data-target="#exampleModalCenter" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
+                            .row
+                                .col.col-sm.text-center
+                                    h2(class="quote") "#{quote.dataValues.body}"
+                            .row
+                                .col.col-sm.text-center.pt-5
+                                    h3.source #{quote.dataValues.source}
+                                .overlay
+                                    button(type="button" class="btn btn-primary btn-edit" id=`${quote.dataValues.id}` data-toggle="modal" data-target="#exampleModalCenter" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
                             hr
             .col.test
         //- script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")

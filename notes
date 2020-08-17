@@ -84,4 +84,10 @@
         - remove home button at bottom of page
     Want to add description section under images on index
         - on click, dynamically load paragraph of container width beneath photo, with link to that section
+8/17/2020
+    Return to 8/3/2020 - delete button
+        - use format of edit
+            - add delete button next to edit button in overlay
+            - brings up modal with confirmation 
+            - submission -> delete route
     

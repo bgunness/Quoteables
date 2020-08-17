@@ -66,26 +66,13 @@ router.get('/inspiration-all', asyncHandler(async(req, res) => {
     res.render('inspiration-all', {quotes})
 }))
 
-// wip
+/* Post newly edited quote */
 router.post('/inspiration-all', asyncHandler(async(req, res) => {
     const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
     const quote = await Quote.findByPk(req.body.id);
     await quote.update(req.body);
     res.redirect('inspiration-all')
 }))
-
-/* Get specified quote to edit */
-router.get('/:id/edit', asyncHandler(async(req, res) => {
-    const quote = await Quote.findByPk(req.params.id);
-    res.render('edit', {quote});
-}));
-
-/* Post newly edited quote */
-router.post('/:id/edit', asyncHandler(async(req, res) => {
-    const quote = await Quote.findByPk(req.params.id);
-    await quote.update(req.body);
-    res.redirect('/');
-}));
 
 /* Get new quote form */
 router.get('/new', asyncHandler(async (req, res) => {

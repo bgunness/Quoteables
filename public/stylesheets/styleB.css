@@ -4,6 +4,10 @@
 
 }
 
+.row {
+    margin-right: 0 ;
+}
+
 .card {
     border: none;
 }
