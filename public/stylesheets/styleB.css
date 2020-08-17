@@ -32,6 +32,17 @@
 }
 
 .modal-dialog {
-    opacity: 1;
+    /* opacity: 1; */
+    pointer-events: auto;
     background-color: ivory;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.modal-body .input-body {
+    min-height: 200px;
 }
