@@ -1,5 +1,4 @@
 $(document).ready(() => {
-
     $('.overlay').hide();
     $('.yes').click(function() {                                        //Cannot be arrow function for 'this' to work!
         if(!($('.overlay').is(':visible'))) {
