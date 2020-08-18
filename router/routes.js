@@ -74,6 +74,15 @@ router.post('/inspiration-all', asyncHandler(async(req, res) => {
     res.redirect('inspiration-all')
 }))
 
+/* Delete selected quote */
+router.post('/inspiration-all/delete', asyncHandler(async(req, res) => {
+    const quote = await Quote.findByPk(req.body.id);
+    if (quote) {
+        await quote.destroy();
+    }
+    res.redirect('/inspiration-all')
+}))
+
 /* Get new quote form */
 router.get('/new', asyncHandler(async (req, res) => {
     res.render('new-page', {quote: {}});
@@ -82,7 +91,7 @@ router.get('/new', asyncHandler(async (req, res) => {
 /* Post newly created quote */
 router.post('/new-submit', asyncHandler(async (req, res) => {
     const quote = await Quote.create(req.body);
-    res.redirect('/')
+    res.redirect('inspiration-all')
 }));
 
 /* Delete a quote */

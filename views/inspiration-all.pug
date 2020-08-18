@@ -5,11 +5,23 @@ html(lang='en')
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
         link(rel="stylesheet" href="/static/stylesheets/styleB.css")
     body
-        #exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+        #modalDeleteQuote.modal.fade(tabindex='-1' role='dialog')
+            .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                        h5.modal-title Delete Quote
+                    .modal-body
+                        p Are you sure you want to delete the selected quote?
+                    .modal-footer
+                        form(action="/inspiration-all/delete" method="post")
+                            input#deleteQuoteId(type='hidden' name='id')
+                            button.btn.btn-primary.modal-delete-btn(type='submit') Confirm
+                            button.btn.btn-secondary.modal-close-btn(type='button', data-dismiss='modal') Close
+        #modalEditQuote.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalEditQuoteTitle', aria-hidden='true')
             .modal-dialog.modal-dialog-centered.flex-column(role='document')
                 .modal-content
                     .modal-header
-                        h5#exampleModalLongTitle.modal-title Edit Quote
+                        h5.modal-title Edit Quote
                         button.close(type='button', data-dismiss='modal', aria-label='Close')
                         span(aria-hidden='true')
                     .modal-body.d-flex.flex-column
@@ -22,20 +34,9 @@ html(lang='en')
                                 .input-group-prepend
                                     span(class="input-group-text") Source
                                 textarea(class="form-control input-source" name="source" placeholder="Source of Quote ..." aria-label="Source text")
-                            input#quoteID(type="hidden" name="id")
+                            input#submitQuoteId(type="hidden" name="id")
                             button.btn.btn-primary.modal-submit-btn(type='submit') Save changes
                             button.btn.btn-secondary.modal-close-btn(type='button', data-dismiss='modal') Close
-                        //- form#editQuote(action="/inspiration-all" method="post")
-                        //-     .input-group
-                        //-         .input-group-prepend
-                        //-             span(class="input-group-text") Body
-                        //-         textarea(class="form-control input-body" form="editQuote" placeholder="Body of Quote ..." aria-label="Body text" value="body")
-                        //-     .input-group
-                        //-         .input-group-prepend
-                        //-             span(class="input-group-text") Source
-                        //-         textarea(class="form-control input-source" placeholder="Source of Quote ..." aria-label="Source text")
-                        //-     button.btn.btn-primary.modal-submit-btn(type='submit') Save changes
-                        //-     button.btn.btn-secondary.modal-close-btn(type='button', data-dismiss='modal') Close
         include includes/header
         .row.test
             .col.d-flex.flex-column.justify-content-center.align-items-center.test
@@ -51,7 +52,9 @@ html(lang='en')
                                 .col.col-sm.text-center.pt-5
                                     h3.source #{quote.dataValues.source}
                                 .overlay
-                                    button(type="button" class="btn btn-primary btn-edit" id=`${quote.dataValues.id}` data-toggle="modal" data-target="#exampleModalCenter" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
+                                    //- button(type="button" class="btn btn-primary btn-edit" id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalEditQuote" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
+                                    button(type="button" class="btn btn-primary btn-edit" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalEditQuote" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
+                                    button(type="button" class="btn btn-primary btn-delete" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalDeleteQuote") Delete
                             hr
             .col.test
         //- script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
