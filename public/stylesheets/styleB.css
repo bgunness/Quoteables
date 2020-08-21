@@ -4,9 +4,10 @@
 
 }
 
-body.single-page {
+/* changed from body.single-page -- testing on index */
+.single-page {
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* Header CSS */
@@ -44,8 +45,8 @@ body.single-page {
     width: 400px;
 }
 
-.container-inspiration {
-    height: calc(100vh - 190px);
+.container-one-quote {
+    height: calc(100vh - 200px);
 }
 
 /* ----- Index ----- */
@@ -118,8 +119,9 @@ body.single-page {
 
 /* ----- Footer ----- */
 .footer {
-    position: fixed;
-    top: calc(100vh - 40px);
+    /* position fixed */
+    position: relative;
+    /* top: calc(100vh - 40px); */
     left: 50%;
     margin-left: -570px;
     text-align: center;

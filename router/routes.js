@@ -105,26 +105,4 @@ router.post('/delete', asyncHandler(async(req, res) => {
     res.redirect('/');
 }));
 
-/* Get a specific quote */
-router.get('/quotes/:id', asyncHandler(async (req, res) => {
-    const quote = await Quote.findByPk(req.params.id);
-    res.render("quote", {quote})
-}));
-
-/* Below code was used before implementation of SQL database */
-
-    // router.get('/', asyncHandler(async (req, res) => {
-    //     res.redirect('/random');
-    // }));
-
-    // router.get('/random', asyncHandler(async (req, res) => {
-    //     const record = await records.randQuote();
-    //     const {quote} = record;
-    //     const {source} = record;
-    //     const url = req.originalUrl;
-        
-    //     // res.json(quote);
-    //     res.render('index', {quote, source, url});
-    // }));
-
 module.exports = router;
