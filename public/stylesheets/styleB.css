@@ -1,10 +1,10 @@
-/* Aids visual testing parameters */
+/* ----- Aids visual testing parameters ----- */
 .test {
     border: 2px solid red;
 
 }
 
-body.inspiration {
+body.single-page {
     height: 100%;
     overflow: hidden;
 }
@@ -14,7 +14,8 @@ body.inspiration {
     justify-content: space-around;
 }
 
-.section-one {
+.section-one,
+.section-three {
     width: 277.5px;
 }
 
@@ -23,11 +24,10 @@ body.inspiration {
     text-align: center;
 }
 
-/* Inspiration quote card */
+/* ----- Inspiration route ----- */
 .card-img-overlay-inspiration {
     text-align: center;
     color: black;
-    /* opacity: 0.8; */
     background-color: white;
     width: 98%;
     height: 100%;
@@ -36,7 +36,7 @@ body.inspiration {
     justify-content: space-around;
 }
 
-img.card-img {
+.card-img {
     border-radius: 20px;
 }
 
@@ -44,29 +44,24 @@ img.card-img {
     width: 400px;
 }
 
-/* Body Alignment - Inspiration route*/
 .container-inspiration {
     height: calc(100vh - 190px);
 }
 
-.footer {
-    position: fixed;
-    top: calc(100vh - 40px);
-    left: 50%;
-    margin-left: -570px;
-    text-align: center;
+/* ----- Index ----- */
+.card-img-overlay {
+    border-radius: 20px;
+}
+
+/* ----- Generic (not route specific ----- */
+.card {
+    border: none;
+    border-radius: 20px;
 }
 
 .row {
     margin-right: 0 ;
-}
-
-.card {
-    border: none;
-}
-
-.card {
-    border-top-right-radius: 20px;
+    margin-left: 0;
 }
 
 .capitalize {
@@ -119,4 +114,13 @@ img.card-img {
 .input-source {
     max-height: 38px;
     resize: none;
+}
+
+/* ----- Footer ----- */
+.footer {
+    position: fixed;
+    top: calc(100vh - 40px);
+    left: 50%;
+    margin-left: -570px;
+    text-align: center;
 }

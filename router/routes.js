@@ -19,7 +19,8 @@ function asyncHandler(cb) {
 
 /* Get home page */
 router.get('/', asyncHandler(async(req, res) => {
-    res.render('index');
+    const url = helpers.cleanURL(req.originalUrl);
+    res.render('index', {url});
 }))
 
 // router.get('/', asyncHandler(async (req, res) => {

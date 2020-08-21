@@ -94,3 +94,10 @@
 8/20/2020
     Possibly change 'inspiration' quotes to be a single card on page, within container
         - remove rows and columns to align, or keep 1 row and 1 col, full vh
+8/21/2020
+    Want to add a filter quotes option to /inspiration-all
+        - initially load all (as it is currently)
+        - search by source
+        - reload page with new results after submit search
+            - pass string through post request, search database by source values
+            - toLowerCase safety net
