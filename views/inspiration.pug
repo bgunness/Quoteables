@@ -4,26 +4,44 @@ html(lang='en')
         title Quoteables
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous")
         link(rel="stylesheet" href="/static/stylesheets/styleB.css")
-    body
+    body.bg-light.display-flex.flex-column.inspiration
         include includes/header
-        .container.min-vh-100.d-flex.flex-column.pt-5.mt-5
-                .row.pt-5.mt-5
-                    .col.col-sm.text-center
-                        h2 "#{quote.body}"
-                .row
-                    .col.col-sm.text-center.py-5
-                        h3.source #{quote.source}
-                .row
-                    .col.col-sm.text-center.mt-5
-                        if url == 'inspiration'
-                            div(class="btn-group" role="group")
-                                a(href=`/${url}`).btn.btn-secondary.my-auto.p-3.capitalize Mo' #{url}
-                                a(href='/').btn.btn-secondary.my-auto.p-3 Home
-                                a(href='/inspiration-all').btn.btn-secondary.my-auto.p-3.capitalize View All
-                        else if url == 'advice' || 'kanye'
-                            div(class="btn-group" role="group")
-                                a(href=`/${url}`).btn.btn-secondary.my-auto.p-3.capitalize Mo' #{url}
-                                a(href='/').btn.btn-secondary.my-auto.p-3 Home
+        //- swap page with container + card in middle?
+        //- removed: .pt-5.mt-5
+        .container.container-inspiration.d-flex.flex-column.align-items-center.justify-content-center
+            .card.quote-card
+                img.card-img(src="../static/img/grid_03.jpg" alt="picture")
+                .card-img-overlay.card-img-overlay-inspiration.d-flex.align-items-center.flex-column.bg-light
+                    h3.card-title.font-italic "#{quote.body}"
+                    p.card-text #{quote.source}
+            if url == 'inspiration'
+                div(class="btn-group mt-5" role="group")
+                    a(href=`/${url}`).btn.btn-info.btn-secondary.my-auto.p-3.capitalize More #{url}
+                    a(href='/').btn.btn-info.btn-secondary.my-auto.p-3 Home
+                    a(href='/inspiration-all').btn.btn-info.btn-secondary.my-auto.p-3.capitalize View All
+            else if url == 'advice' || 'kanye'
+                div(class="btn-group mt-5" role="group")
+                    a(href=`/${url}`).btn.btn-info.btn-secondary.my-auto.p-3.capitalize More #{url}
+                    a(href='/').btn.btn-info.btn-secondary.my-auto.p-3 Home
+        include includes/footer
+
+                //- .row.pt-5.mt-5
+                //-     .col.col-sm.text-center
+                //-         h2 "#{quote.body}"
+                //- .row
+                //-     .col.col-sm.text-center.py-5
+                //-         h3.source #{quote.source}
+                //- .row
+                //-     .col.col-sm.text-center.mt-5
+                //-         if url == 'inspiration'
+                //-             div(class="btn-group" role="group")
+                //-                 a(href=`/${url}`).btn.btn-secondary.my-auto.p-3.capitalize Mo' #{url}
+                //-                 a(href='/').btn.btn-secondary.my-auto.p-3 Home
+                //-                 a(href='/inspiration-all').btn.btn-secondary.my-auto.p-3.capitalize View All
+                //-         else if url == 'advice' || 'kanye'
+                //-             div(class="btn-group" role="group")
+                //-                 a(href=`/${url}`).btn.btn-secondary.my-auto.p-3.capitalize Mo' #{url}
+                //-                 a(href='/').btn.btn-secondary.my-auto.p-3 Home
     script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
     script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous")
     script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous")

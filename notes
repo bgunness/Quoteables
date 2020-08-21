@@ -91,3 +91,6 @@
             - brings up modal with confirmation 
             - submission -> delete route
     
+8/20/2020
+    Possibly change 'inspiration' quotes to be a single card on page, within container
+        - remove rows and columns to align, or keep 1 row and 1 col, full vh

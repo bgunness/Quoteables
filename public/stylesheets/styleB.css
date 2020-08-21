@@ -1,7 +1,60 @@
-/* Adds visual testing parameters */
+/* Aids visual testing parameters */
 .test {
     border: 2px solid red;
 
+}
+
+body.inspiration {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Header CSS */
+.header-container {
+    justify-content: space-around;
+}
+
+.section-one {
+    width: 277.5px;
+}
+
+.section-two {
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+/* Inspiration quote card */
+.card-img-overlay-inspiration {
+    text-align: center;
+    color: black;
+    /* opacity: 0.8; */
+    background-color: white;
+    width: 98%;
+    height: 100%;
+    margin: auto;
+    border-radius: 20px;
+    justify-content: space-around;
+}
+
+img.card-img {
+    border-radius: 20px;
+}
+
+.quote-card {
+    width: 400px;
+}
+
+/* Body Alignment - Inspiration route*/
+.container-inspiration {
+    height: calc(100vh - 190px);
+}
+
+.footer {
+    position: fixed;
+    top: calc(100vh - 40px);
+    left: 50%;
+    margin-left: -570px;
+    text-align: center;
 }
 
 .row {
@@ -10,6 +63,10 @@
 
 .card {
     border: none;
+}
+
+.card {
+    border-top-right-radius: 20px;
 }
 
 .capitalize {
