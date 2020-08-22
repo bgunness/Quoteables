@@ -37,3 +37,10 @@ $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
 $('.dropdown').on('hide.bs.dropdown', function() {
 $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
 });
+
+// Add hover animation to quote cards
+$('.yes').hover(function() {
+    $(this).addClass('hover')
+}, function () {
+    $(this).removeClass('hover')
+})
