@@ -39,12 +39,21 @@ html(lang='en')
                             button.btn.btn-secondary.modal-close-btn(type='button', data-dismiss='modal') Close
         include includes/header
         .row
-            .col.d-flex.flex-column.justify-content-center.align-items-center.pt-5.bg-light
+            .col.d-flex.flex-column.justify-content-start.align-items-center.pt-5.bg-light
+                //- form.form-inline.my-2.my-lg-0(action="/inspiration-all-search" method="post")
+                //-     input.form-control.mr-sm-2(type='search' name="source" placeholder='Search by source', aria-label='Search')
+                //-     button.btn.btn-outline-info.my-2.my-sm-0(type='submit') Search
+                //-     form(action="/inspiration-all" method="get")
+                //-         button.btn.btn-outline-info.my-2.my-sm-0 Reset
             .col.pt-5.bg-light
-                .container.min-vh-100.d-flex.justify-content-center.flex-column
+                .container.min-vh-100.d-flex.justify-content-start.flex-column
+                    form.pb-5.form-inline.my-2.my-lg-0.mx-auto(action="/inspiration-all-search" method="post")
+                        input.form-control.mr-sm-2(type='search' name="source" placeholder='Search by author', aria-label='Search')
+                        button.btn.btn-outline-info.my-2.my-sm-0(type='submit') Search
+                        form(action="/inspiration-all" method="get")
+                            button.btn.btn-outline-info.my-2.mx-1.my-sm-0 Reset
                     each quote in quotes
                         quote(class="yes")
-                            //- form element?
                             .row
                                 .col.col-sm.text-center
                                     h4(class="quote") "#{quote.dataValues.body}"

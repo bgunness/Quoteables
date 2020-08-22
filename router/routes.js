@@ -4,6 +4,7 @@ const Quote = require('../models').Quote;
 const records = require('../records');
 const helpers = require('../helpers');
 const { sequelize } = require('../models');
+const { Op } = require('sequelize');
 
 
 //  Async Handler -- inserts try/catch blocks
@@ -63,17 +64,33 @@ router.get('/inspiration', asyncHandler(async(req, res) => {
 
 /* Get all inspirational quotes */
 router.get('/inspiration-all', asyncHandler(async(req, res) => {
-    const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
-    res.render('inspiration-all', {quotes})
+        const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
+        res.render('inspiration-all', {quotes})
 }))
 
 /* Post newly edited quote */
 router.post('/inspiration-all', asyncHandler(async(req, res) => {
-    const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
     const quote = await Quote.findByPk(req.body.id);
     await quote.update(req.body);
     res.redirect('inspiration-all')
 }))
+
+/* Post search bar parameters */
+router.post('/inspiration-all-search', asyncHandler(async(req, res) => {
+    if (req.body.source == '') {                        //Searching an empty string returns all the quotes
+        res.redirect('inspiration-all')
+    }
+    const quotes = await Quote.findAll({
+        where: {
+            source: {
+                [Op.substring] : `${req.body.source}`   //To search regardless of accidental spaces around the 'source' value, and capitalization
+            }
+        }
+    })
+    res.render('inspiration-all', {quotes})
+}))
+
+/* Get page with search bar parameters */
 
 /* Delete selected quote */
 router.post('/inspiration-all/delete', asyncHandler(async(req, res) => {
