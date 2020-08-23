@@ -101,3 +101,10 @@
         - reload page with new results after submit search
             - pass string through post request, search database by source values
             - toLowerCase safety net
+8/23/2020
+    *BUG*
+        - there exists a quote with source 'Lincoln ' 
+        - searching for 'lincoln' returns both quotes with sources that include and omit the space after 'lincoln' 
+        - searching for 'lincoln ' returns only the quote with the source that includes the space 
+            - fix: no matter what the search term is in regards to spaces, return all quotes with that source
+            - prepare for omission of commas, periods, for longer names

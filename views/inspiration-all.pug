@@ -8,24 +8,25 @@ html(lang='en')
         #modalDeleteQuote.modal.fade(tabindex='-1' role='dialog')
             .modal-dialog(role='document')
                 .modal-content
-                    .modal-header
+                    .modal-header.mx-auto
                         h5.modal-title Delete Quote
-                    .modal-body
+                    .modal-body.mx-auto
                         p Are you sure you want to delete the selected quote?
-                    .modal-footer
+                    .modal-footer.mx-auto
                         form(action="/inspiration-all/delete" method="post")
                             input#deleteQuoteId(type='hidden' name='id')
-                            button.btn.btn-primary.modal-delete-btn(type='submit') Confirm
-                            button.btn.btn-secondary.modal-close-btn(type='button', data-dismiss='modal') Close
+                            .btn-group
+                                button.btn.btn-info.modal-delete-btn(type='submit') Confirm
+                                button.btn.btn-danger.modal-close-btn(type='button', data-dismiss='modal') Cancel
         #modalEditQuote.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalEditQuoteTitle', aria-hidden='true')
             .modal-dialog.modal-dialog-centered.flex-column(role='document')
                 .modal-content
-                    .modal-header
+                    .modal-header.mx-auto
                         h5.modal-title Edit Quote
                         button.close(type='button', data-dismiss='modal', aria-label='Close')
                         span(aria-hidden='true')
                     .modal-body.d-flex.flex-column
-                        form(action="/inspiration-all" method="post")
+                        form.d-flex.flex-column(action="/inspiration-all" method="post")
                             .input-group
                                 .input-group-prepend
                                     span(class="input-group-text") Body
@@ -35,8 +36,9 @@ html(lang='en')
                                     span(class="input-group-text") Source
                                 textarea(class="form-control input-source" name="source" placeholder="Source of Quote ..." aria-label="Source text")
                             input#submitQuoteId(type="hidden" name="id")
-                            button.btn.btn-primary.modal-submit-btn(type='submit') Save changes
-                            button.btn.btn-secondary.modal-close-btn(type='button', data-dismiss='modal') Close
+                            .btn-group.align-self-center
+                                button.btn.btn-info.modal-submit-btn(type='submit') Save changes
+                                button.btn.btn-danger.modal-close-btn(type='button', data-dismiss='modal') Close
         include includes/header
         .row
             .col.d-flex.flex-column.justify-content-start.align-items-center.pt-5.bg-light

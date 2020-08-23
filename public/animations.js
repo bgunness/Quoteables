@@ -1,6 +1,6 @@
 $(document).ready(() => {
-    $('.overlay').hide();
     $('.yes').click(function() {             
+        $('.overlay').hide();
         var hiddenDiv = $(this).find('.overlay')                           //Cannot be arrow function for 'this' to work!
         if(!($(hiddenDiv).is(':visible'))) {
             $(hiddenDiv).fadeIn(200);
