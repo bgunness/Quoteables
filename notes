@@ -108,3 +108,6 @@
         - searching for 'lincoln ' returns only the quote with the source that includes the space 
             - fix: no matter what the search term is in regards to spaces, return all quotes with that source
             - prepare for omission of commas, periods, for longer names
+    *BUG*
+        - clicking at very bottom of quote within 'inspiration-all' doesn't apply overlay div 
+        - issue is with selecting parents of e.target, 'yes' is not a parent of itself
