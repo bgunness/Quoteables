@@ -83,7 +83,7 @@ router.post('/inspiration-all-search', asyncHandler(async(req, res) => {
     const quotes = await Quote.findAll({
         where: {
             source: {
-                [Op.substring] : `${req.body.source}`   //To search regardless of accidental spaces around the 'source' value, and capitalization
+                [Op.substring] : `${req.body.source}`   //To search regardless of accidental spaces around the 'source' value and capitalization
             }
         }
     })

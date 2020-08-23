@@ -55,15 +55,15 @@ html(lang='en')
                     each quote in quotes
                         quote.yes.pt-3.mb-3
                             .row
+                                .overlay
+                                    .btn-group
+                                        button(type="button" class="btn btn-info btn-edit" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalEditQuote" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
+                                        button(type="button" class="btn btn-danger btn-delete" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalDeleteQuote") Delete
                                 .col.col-sm.text-center
                                     h4(class="quote") "#{quote.dataValues.body}"
                             .row
                                 .col.col-sm.text-center.pt-5
                                     h4.source #{quote.dataValues.source}
-                                .overlay
-                                    //- button(type="button" class="btn btn-primary btn-edit" id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalEditQuote" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
-                                    button(type="button" class="btn btn-primary btn-edit" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalEditQuote" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
-                                    button(type="button" class="btn btn-primary btn-delete" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalDeleteQuote") Delete
                             hr
             .col.pt-5.bg-light
         include includes/body-scripts

@@ -1,15 +1,25 @@
 $(document).ready(() => {
     $('.overlay').hide();
-    $('.yes').click(function() {                                        //Cannot be arrow function for 'this' to work!
-        if(!($('.overlay').is(':visible'))) {
-            var hiddenDiv = $(this).find('.overlay')
-            $(hiddenDiv).show(200);
+    $('.yes').click(function() {             
+        var hiddenDiv = $(this).find('.overlay')                           //Cannot be arrow function for 'this' to work!
+        if(!($(hiddenDiv).is(':visible'))) {
+            $(hiddenDiv).fadeIn(200);
         } else {
-            $('.overlay').hide(200);
+            $(hiddenDiv).fadeOut(100);
         }
     })
 });
-
+/*
+$('html').click(function(e) {
+    if(($(e.target).parents('.yes').length) ) {
+        console.log('descendant of yes')
+    }
+    // if(!$(e.target).hasClass('yes')) {
+    //     console.log('NOT yes')
+    //     $('.overlay').fadeOut(100);
+    // }
+})
+*/
 $('#modalEditQuote').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
     var body = button.data('body')

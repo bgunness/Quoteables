@@ -49,6 +49,25 @@
     height: calc(100vh - 200px);
 }
 
+.yes {
+    position: relative;
+}
+
+.overlay {
+    top: 0;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    height: 100%;
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.overlay .btn-group {
+    top: 40%;
+}
+
 /* ----- Index ----- */
 .card-img-overlay {
     border-radius: 20px;
@@ -76,17 +95,6 @@
 
 .jumbotron {
     margin-bottom: 0;
-}
-
-.overlay {
-    text-align: center;
-    border-radius: 20px;
-    background-color: rgb(122, 175, 255);
-    z-index: 10;
-    height: 100px;
-    display: none;
-    position: absolute;
-    width: 90%;
 }
 
 .overlay h3 {
