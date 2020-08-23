@@ -59,10 +59,10 @@ html(lang='en')
                                     .btn-group
                                         button(type="button" class="btn btn-info btn-edit" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalEditQuote" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
                                         button(type="button" class="btn btn-danger btn-delete" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalDeleteQuote") Delete
-                                .col.col-sm.text-center
+                                .col.col-sm.text-center.user-select-none
                                     h4(class="quote") "#{quote.dataValues.body}"
                             .row
-                                .col.col-sm.text-center.pt-5
+                                .col.col-sm.text-center.pt-5.user-select-none
                                     h4.source #{quote.dataValues.source}
                             hr
             .col.pt-5.bg-light

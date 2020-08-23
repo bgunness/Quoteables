@@ -9,17 +9,13 @@ $(document).ready(() => {
         }
     })
 });
-/*
+
 $('html').click(function(e) {
-    if(($(e.target).parents('.yes').length) ) {
-        console.log('descendant of yes')
+    if(!($(e.target).parents('.yes').length) > 0 ) {
+        $('.overlay').fadeOut(100);
     }
-    // if(!$(e.target).hasClass('yes')) {
-    //     console.log('NOT yes')
-    //     $('.overlay').fadeOut(100);
-    // }
 })
-*/
+
 $('#modalEditQuote').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
     var body = button.data('body')
