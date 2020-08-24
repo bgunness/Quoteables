@@ -1,4 +1,3 @@
-$(document).ready(() => {
     $('.yes').click(function() {             
         $('.overlay').hide();
         var hiddenDiv = $(this).find('.overlay')                           //Cannot be arrow function for 'this' to work!
@@ -8,7 +7,6 @@ $(document).ready(() => {
             $(hiddenDiv).fadeOut(100);
         }
     })
-});
 
 $('html').click(function(e) {
     if(!($(e.target).parents('.yes').length) > 0 ) {
