@@ -111,3 +111,6 @@
     *BUG*
         - clicking at very bottom of quote within 'inspiration-all' doesn't apply overlay div 
         - issue is with selecting parents of e.target, 'yes' is not a parent of itself
+8/25/2020
+    Add error handling
+        - create 404 route
