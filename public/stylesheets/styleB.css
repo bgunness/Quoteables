@@ -4,10 +4,16 @@
 
 }
 
-/* changed from body.single-page -- testing on index */
+/* ----- Set minimum height of page for ease of styling ----- */
 .single-page {
     height: 100%;
-    /* overflow: hidden; */
+}
+
+/* ----- Errors ----- */
+.error li {
+    color: crimson;
+    list-style: none;
+    text-align: center;
 }
 
 /* Header CSS */

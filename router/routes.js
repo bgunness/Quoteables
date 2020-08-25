@@ -53,9 +53,16 @@ router.get('/inspiration-all', asyncHandler(async(req, res) => {
 
 /* Post newly edited quote */
 router.post('/inspiration-all', asyncHandler(async(req, res) => {
-    const quote = await Quote.findByPk(req.body.id);
-    await quote.update(req.body);
-    res.redirect('inspiration-all')
+    try {
+        const quote = await Quote.findByPk(req.body.id);
+        await quote.update(req.body);
+        res.redirect('inspiration-all')
+    } catch (err) {
+        if (err.name === "SequelizeValidationError") {
+            const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
+            res.render('inspiration-all', {quotes, errors: err.errors})
+        }
+    }
 }))
 
 /* Post search bar parameters */
