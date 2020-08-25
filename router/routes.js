@@ -24,11 +24,6 @@ router.get('/', asyncHandler(async(req, res) => {
     res.render('index', {url});
 }))
 
-// router.get('/', asyncHandler(async (req, res) => {
-//     const quotes = await Quote.findAll({ order: [["createdAt", "DESC"]] });
-//     res.render('quotesAll', {quotes})
-// }));
-
 /* Get Kanye quotes from API */
 router.get('/kanye', asyncHandler(async(req, res) => {
     const {quote} = await records.getKanyeQuote();
@@ -43,18 +38,6 @@ router.get('/advice', asyncHandler(async(req, res) => {
     const url = helpers.cleanURL(req.originalUrl);
     res.render('advice', {advice, url});
 }));
-
-/* Get inspiration page */
-router.get('/inspiration/:id', asyncHandler(async(req, res) => {
-    // if (req.params.id == '1') {
-    //     const quote = await Quote.findByPk(req.params.id);
-    // } else {
-    //     const quote = await Quote.findByPk(req.params.id);
-    // }
-    const quote = await Quote.findByPk(req.params.id);
-    const url = helpers.cleanURL(req.originalUrl);
-    res.render('inspiration', {quote, url})
-}))
 
 router.get('/inspiration', asyncHandler(async(req, res) => {
     const quote = await Quote.findOne({order: sequelize.random()})
@@ -89,8 +72,6 @@ router.post('/inspiration-all-search', asyncHandler(async(req, res) => {
     })
     res.render('inspiration-all', {quotes})
 }))
-
-/* Get page with search bar parameters */
 
 /* Delete selected quote */
 router.post('/inspiration-all/delete', asyncHandler(async(req, res) => {
