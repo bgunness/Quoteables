@@ -30,11 +30,11 @@ html(lang='en')
                             .input-group
                                 .input-group-prepend
                                     span(class="input-group-text") Body
-                                textarea(class="form-control input-body" name="body" placeholder="Body of Quote ..." aria-label="Body text" value="body")
+                                textarea(class="form-control input-body" name="body" placeholder="Body of Quote" aria-label="Body text" value="body")
                             .input-group
                                 .input-group-prepend
                                     span(class="input-group-text") Source
-                                textarea(class="form-control input-source" name="source" placeholder="Source of Quote ..." aria-label="Source text")
+                                textarea(class="form-control input-source" name="source" placeholder="Author" aria-label="Source text")
                             input#submitQuoteId(type="hidden" name="id")
                             .btn-group.align-self-center
                                 button.btn.btn-info.modal-submit-btn(type='submit') Save changes
@@ -42,16 +42,12 @@ html(lang='en')
         include includes/header
         .row
             .col.d-flex.flex-column.justify-content-start.align-items-center.pt-5.bg-light
-                //- form.form-inline.my-2.my-lg-0(action="/inspiration-all-search" method="post")
-                //-     input.form-control.mr-sm-2(type='search' name="source" placeholder='Search by source', aria-label='Search')
-                //-     button.btn.btn-outline-info.my-2.my-sm-0(type='submit') Search
-                //-     form(action="/inspiration-all" method="get")
-                //-         button.btn.btn-outline-info.my-2.my-sm-0 Reset
             .col.pt-5.bg-light
                 .container.min-vh-100.d-flex.justify-content-start.flex-column
-                    form.pb-5.form-inline.my-2.my-lg-0.mx-auto(action="/inspiration-all-search" method="post")
-                        input.form-control.mr-sm-2(type='search' name="source" placeholder='Search by author', aria-label='Search')
-                        button.btn.btn-outline-info.my-2.my-sm-0(type='submit') Search
+                    .d-flex.justify-content-center
+                        form.pb-5.form-inline.my-2.my-lg-0(action="/inspiration-all-search" method="post")
+                            input.form-control.mr-sm-2(type='search' name="source" placeholder='Search by author', aria-label='Search')
+                            button.btn.btn-outline-info.my-2.my-sm-0(type='submit') Search
                         form(action="/inspiration-all" method="get")
                             button.btn.btn-outline-info.my-2.mx-1.my-sm-0 Reset
                     each quote in quotes
@@ -67,6 +63,8 @@ html(lang='en')
                                 .col.col-sm.text-center.pt-5.user-select-none
                                     h4.source #{quote.dataValues.source}
                             hr
-            .col.pt-5.bg-light
+            .col.pt-5.bg-light.d-flex.justify-content-center
+                form(action="/new" method="get")
+                    button.btn.btn-success.my-2.mx-1.my-sm-0 Create New
         include includes/body-scripts
         include includes/footer
