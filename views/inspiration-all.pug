@@ -16,7 +16,7 @@ html(lang='en')
                         form(action="/inspiration-all/delete" method="post")
                             input#deleteQuoteId(type='hidden' name='id')
                             .btn-group
-                                button.btn.btn-info.modal-delete-btn(type='submit') Confirm
+                                button.btn.btn-outline-danger.modal-delete-btn(type='submit') Confirm
                                 button.btn.btn-danger.modal-close-btn(type='button', data-dismiss='modal') Cancel
         #modalEditQuote.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modalEditQuoteTitle', aria-hidden='true')
             .modal-dialog.modal-dialog-centered.flex-column(role='document')
