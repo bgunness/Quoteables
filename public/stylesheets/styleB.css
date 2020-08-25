@@ -10,7 +10,7 @@
 }
 
 /* ----- Errors ----- */
-.error li {
+.error p {
     color: crimson;
     list-style: none;
     text-align: center;
