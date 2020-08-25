@@ -73,6 +73,15 @@
     border-radius: 20px;
 }
 
+/* New Quote  */
+.new-quote-form {
+    width: 500px;   /* will need to optimize for mobile */
+}
+
+.new-quote-form .input-body {
+    height: 200px;
+}
+
 /* ----- Generic (not route specific) ----- */
 .hover {
     box-shadow: 0px 0px 10px 1px;

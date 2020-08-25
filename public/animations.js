@@ -50,7 +50,7 @@ $('.yes').hover(function() {
 })
 
 // Add hoveranimation to index cards
-$('.card').hover(function() {
+$('.index-card').hover(function() {
     $(this).addClass('hover')
 }, function () {
     $(this).removeClass('hover')
