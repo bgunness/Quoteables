@@ -111,6 +111,12 @@
     *BUG*
         - clicking at very bottom of quote within 'inspiration-all' doesn't apply overlay div 
         - issue is with selecting parents of e.target, 'yes' is not a parent of itself
+    *BUG*
+        - searching is overly sensitive, searching for any character in the source name returns that source
+            - 'a' should return nothing
+            - 'apple' should return nothing
+            - 'applebees' should return 'Applebees'
+            - ? disregard checking for spaces
 8/25/2020
     Add error handling
         - create 404 route

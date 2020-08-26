@@ -13,10 +13,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/static', express.static('public'));
 
 app.use('/', routes);
-
-// app.listen(3000, () => {
-//     console.log("App is running on port 3000.")
-// });
+app.use((req, res) => {
+  res.render('404')
+})
 
 // error handler
 app.use( (err, req, res, next) => {
@@ -27,6 +26,6 @@ app.use( (err, req, res, next) => {
     // render the error page
     res.status(err.status || 500);
     res.render('error');
-  });
+});
 
 module.exports = app;

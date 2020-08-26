@@ -27,9 +27,9 @@ router.get('/', asyncHandler(async(req, res) => {
 /* Get Kanye quotes from API */
 router.get('/kanye', asyncHandler(async(req, res) => {
     const {quote} = await records.getKanyeQuote();
-    const source = 'Omari West, K.';
-    const url = helpers.cleanURL(req.originalUrl);
-    res.render('kanye', {quote, source, url});
+        const source = 'Omari West, K.';
+        const url = helpers.cleanURL(req.originalUrl);
+        res.render('kanye', {quote, source, url});
 }));
 
 /* Get random advice page */
@@ -67,7 +67,7 @@ router.post('/inspiration-all', asyncHandler(async(req, res) => {
 
 /* Post search bar parameters */
 router.post('/inspiration-all-search', asyncHandler(async(req, res) => {
-    if (req.body.source == '') {                        //Searching an empty string returns all the quotes
+    if (req.body.source == '') {                        //Searching an empty string returns all the quotes       //functions as expected, throws generic error
         res.redirect('inspiration-all')
     }
     const quotes = await Quote.findAll({
@@ -77,7 +77,12 @@ router.post('/inspiration-all-search', asyncHandler(async(req, res) => {
             }
         }
     })
-    res.render('inspiration-all', {quotes})
+    if (quotes.length === 0) {
+        const msg = true
+        res.render('inspiration-all', {quotes, msg})
+    } else {
+        res.render('inspiration-all', {quotes})
+    }
 }))
 
 /* Delete selected quote */
@@ -96,8 +101,14 @@ router.get('/new', asyncHandler(async (req, res) => {
 
 /* Post newly created quote */
 router.post('/new-submit', asyncHandler(async (req, res) => {
-    const quote = await Quote.create(req.body);
-    res.redirect('inspiration-all')
+    try {
+        const quote = await Quote.create(req.body);
+        res.redirect('inspiration-all')
+    } catch (err) {
+        if (err.name === "SequelizeValidationError") {
+            res.render('new-page', {errors: err.errors})
+        }
+    }
 }));
 
 /* Delete a quote */
