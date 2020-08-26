@@ -55,3 +55,8 @@ $('.index-card').hover(function() {
 }, function () {
     $(this).removeClass('hover')
 })
+
+$('.bi-emoji-dizzy').css({
+    'transition': 'transform 5s',
+    'transform':"rotate(360deg)"
+})

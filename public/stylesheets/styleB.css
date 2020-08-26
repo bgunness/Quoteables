@@ -95,6 +95,10 @@
     transition: box-shadow 200ms;
 }
 
+/* .bi-emoji-dizzy {
+    transition: all 10s;
+} */
+
 .card {
     border: none;
     border-radius: 20px;
