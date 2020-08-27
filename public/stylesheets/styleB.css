@@ -39,6 +39,10 @@
     align-items: center;
 }
 
+.jumbotron {
+    margin-bottom: 0;
+}
+
 /* ----- Inspiration route ----- */
 .card-img-overlay-inspiration {
     text-align: center;
@@ -96,40 +100,13 @@
     height: 200px;
 }
 
-/* ----- Generic (not route specific) ----- */
-.hover {
-    box-shadow: 0px 0px 10px 1px;
-    transition: box-shadow 200ms;
-}
-
-.card {
-    border: none;
-    border-radius: 20px;
-}
-
-.row {
-    margin-right: 0 ;
-    margin-left: 0;
-}
-
-.capitalize {
-    text-transform: capitalize;
-}
-
-.jumbotron {
-    margin-bottom: 0;
-}
-
-.overlay h3 {
-    margin: 0;
-}
-
-.input-group-prepend {
-    width: 15%;
-}
-
+/* ----- Modal ----- */
 .input-group-text {
     width: 100%;
+}
+
+.modal-body {
+    text-align: center;
 }
 
 .modal-body button{
@@ -151,6 +128,30 @@
 .input-source {
     max-height: 38px;
     resize: none;
+}
+
+/* ----- Generic (not route specific) ----- */
+.hover {
+    box-shadow: 0px 0px 10px 1px;
+    transition: box-shadow 200ms;
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+}
+
+.row {
+    margin-right: 0 ;
+    margin-left: 0;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.overlay h3 {
+    margin: 0;
 }
 
 /* ----- Footer ----- */
