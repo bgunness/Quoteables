@@ -56,7 +56,7 @@
 }
 
 .quote-card {
-    width: 400px;
+    width: 300px;
 }
 
 .container-one-quote {
@@ -87,7 +87,7 @@
     border-radius: 20px;
 }
 
-/* New Quote  */
+/* ----- New Quote ----  */
 .new-quote-form {
     width: 500px;   /* will need to optimize for mobile */
 }
