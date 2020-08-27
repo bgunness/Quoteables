@@ -93,7 +93,8 @@
 
 /* ----- New Quote ----  */
 .new-quote-form {
-    width: 500px;   /* will need to optimize for mobile */
+    width: 100%;
+    max-width: 500px;   /* will need to optimize for mobile */
 }
 
 .new-quote-form .input-body {
