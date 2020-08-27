@@ -1,22 +1,56 @@
+//- .jumbotron.jumbotron-fluid.text-dark.bg-light.py-4
+//-     .container.d-flex.flex-wrap-reverse.header-container
+//-         div.section-one.d-flex.align-items-end.justify-content-center
+//-             nav(class="navbar navbar-expand-lg navbar-light bg-light")
+//-                 button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
+//-                     span(class="navbar-toggler-icon")
+//-                 div(class="collapse navbar-collapse" id="navbarNavAltMarkup")
+//-                     ul(class="navbar-nav")
+//-                         li.nav-item.active
+//-                             a.nav-link.active(href='/')
+//-                                 | Home 
+//-                                 span.sr-only (current)
+//-                         li.nav-item.dropdown
+//-                             a.nav-link.dropdown-toggle.text-info(href='#' id="navbarDrowndownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Quotes
+//-                             .dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
+//-                                 a.dropdown-item(href="/kanye") Kanye West
+//-                                 a.dropdown-item(href="/inspiration") Inspiration
+//-                                 a.dropdown-item(href="/advice") Advice
+//-         div.section-two
+//-             h1.display-4 Quoteables
+//-             p.lead For when life gets you down.
+//-         div.section-three.d-flex.align-items-end.mb-3.justify-content-around.w-25
+
 .jumbotron.jumbotron-fluid.text-dark.bg-light.py-4
-    .container.d-flex.flex-wrap-reverse.header-container
-        div.section-one.d-flex.align-items-end.justify-content-center
-            nav(class="navbar navbar-expand-lg navbar-light bg-light")
-                button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
-                    span(class="navbar-toggler-icon")
-                div(class="collapse navbar-collapse" id="navbarNavAltMarkup")
-                    ul(class="navbar-nav")
-                        li.nav-item.active
-                            a.nav-link.active(href='/')
-                                | Home 
-                                span.sr-only (current)
-                        li.nav-item.dropdown
-                            a.nav-link.dropdown-toggle.text-info(href='#' id="navbarDrowndownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Quotes
-                            .dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
-                                a.dropdown-item(href="/kanye") Kanye West
-                                a.dropdown-item(href="/inspiration") Inspiration
-                                a.dropdown-item(href="/advice") Advice
-        div.section-two
-            h1.display-4 Quoteables
-            p.lead For when life gets you down.
-        div.section-three.d-flex.align-items-end.mb-3.justify-content-around.w-25
+    .container.d-flex.header-container
+        .row.d-lg-flex
+            .col-12.col-lg.section-two.order-lg-2
+                h1.display-4 Quoteables
+                p.lead For when life gets you down.
+            .col.section-three.d-flex.align-items-end.justify-content-around.order-lg-3
+            .col-lg.col-12.section-one.d-flex.align-items-end.justify-content-center
+                nav(class="navbar navbar-expand-lg navbar-light bg-light")
+                        button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation")
+                            span(class="navbar-toggler-icon")
+                        div(class="collapse navbar-collapse" id="navbarNavAltMarkup")
+                            ul(class="navbar-nav")
+                                li.nav-item.active
+                                    a.nav-link.active(href='/')
+                                        | Home 
+                                        span.sr-only (current)
+                                li.nav-item.dropdown
+                                    a.nav-link.dropdown-toggle.text-info(href='#' id="navbarDrowndownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Quotes
+                                    .dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
+                                        a.dropdown-item(href="/kanye") Kanye West
+                                        a.dropdown-item(href="/inspiration") Inspiration
+                                        a.dropdown-item(href="/advice") Advice
+
+//- removed flex-wrap-reverse
+//- moved section-one div to 3rd position , added col-12
+//- changed mb-3 on section three (in second position now) to mb-sm-3
+//- changed section-two col to col-12
+//- removed w-25 from section-three
+//- added col-lg to section-two, section-one
+//- added f-lg-flex to row
+//- added order-lg-3 to section three, order-lg-2 to section two
+//- removed mb from section three
