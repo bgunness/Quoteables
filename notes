@@ -120,3 +120,16 @@
 8/25/2020
     Add error handling
         - create 404 route
+8/28/2020
+    Replace SQLite with MySQL
+        Configure MySQL with Sequelize
+        Reconfigure models if necessary
+    Setup app on Heroku (create account)
+    Connect app to ClearDB (Heroku DB app)
+
+** IMPORTANT
+    net start/stop mysql in /bin --- use to interact with maria, cannot run same time as xampp
+        xampp needs to run for this app to run
+    xamp shell
+        -u root, no pass
+        

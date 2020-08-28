@@ -1,14 +1,17 @@
 {
   "development": {
-    "dialect": "sqlite",
-    "storage": "development.db"
+    "dialect": "mysql",
+    "storage": "development.db",
+    "database": "quotes",
+    "username": "root",
+    "host": "localhost"
   },
   "test": {
-    "dialect": "sqlite",
+    "dialect": "mysql",
     "storage": "test.db"
   },
   "production": {
-    "dialect": "sqlite",
+    "dialect": "mysql",
     "storage": "production.db"
   }
 }
