@@ -127,9 +127,14 @@
     Setup app on Heroku (create account)
     Connect app to ClearDB (Heroku DB app)
 
+    - Error: Trying to load 'inspiration' route with no quotes throws error, inspiration-all works fine
+
 ** IMPORTANT
     net start/stop mysql in /bin --- use to interact with maria, cannot run same time as xampp
         xampp needs to run for this app to run
     xamp shell
         -u root, no pass
+**
+
+
         
