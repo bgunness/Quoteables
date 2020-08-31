@@ -12,7 +12,7 @@
   },
   "production": {
     "dialect": "mysql",
-    "use_env_variable": "mysql://bde77146b370ee:8645e0dd@us-cdbr-east-02.cleardb.com/heroku_8f25781272faa21?reconnect=true",
+    "use_env_variable": "CLEARDB_DATABASE_URL",
     "storage": "production.db"
   }
 }
