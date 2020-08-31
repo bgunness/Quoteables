@@ -132,7 +132,7 @@
 ** IMPORTANT
     net start/stop mysql in /bin --- use to interact with maria, cannot run same time as xampp
         xampp needs to run for this app to run
-    xamp shell
+    admin cmd NOT xamp shell
         -u root, no pass
 **
 
