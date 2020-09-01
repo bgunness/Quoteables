@@ -42,7 +42,12 @@ router.get('/advice', asyncHandler(async(req, res) => {
 router.get('/inspiration', asyncHandler(async(req, res) => {
     const quote = await Quote.findOne({order: sequelize.random()})
     const url = helpers.cleanURL(req.originalUrl);
-    res.render('inspiration', {quote, url});
+    if (quote) {
+        res.render('inspiration', {quote, url});
+    } else {
+        const msg = true
+        res.render('inspiration', {url, msg})
+    }
 }));
 
 /* Get all inspirational quotes */

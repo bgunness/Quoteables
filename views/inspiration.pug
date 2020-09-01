@@ -5,10 +5,18 @@ html.single-page(lang='en')
         include includes/header
         .container.d-flex.flex-column.align-items-center.justify-content-center
             .card.quote-card
-                img.card-img(src="../static/img/grid_03.jpg" alt="picture")
-                .card-img-overlay.card-img-overlay-inspiration.d-flex.align-items-center.flex-column.bg-light
-                    h3.card-title.font-italic "#{quote.body}"
-                    p.card-text #{quote.source}
+                if msg
+                    img.card-img(src="../static/img/grid_03.jpg" alt="picture")
+                    .card-img-overlay.card-img-overlay-inspiration.d-flex.align-items-center.flex-column.bg-light
+                        h3.card-title No inspirational quotes found
+                        p.card-text Add one on the 
+                            span 'View All'
+                            |   page!
+                else
+                    img.card-img(src="../static/img/grid_03.jpg" alt="picture")
+                    .card-img-overlay.card-img-overlay-inspiration.d-flex.align-items-center.flex-column.bg-light
+                        h3.card-title.font-italic "#{quote.body}"
+                        p.card-text #{quote.source}
             if url == 'inspiration'
                 div(class="btn-group mt-5" role="group")
                     a(href=`/${url}`).btn.btn-info.btn-secondary.my-auto.p-3.capitalize More #{url}
