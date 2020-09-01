@@ -24,12 +24,12 @@ router.get('/', asyncHandler(async(req, res) => {
     res.render('index', {url});
 }))
 
-/* Get Kanye quotes from API */
-router.get('/kanye', asyncHandler(async(req, res) => {
-    const {quote} = await records.getKanyeQuote();
-        const source = 'Omari West, K.';
-        const url = helpers.cleanURL(req.originalUrl);
-        res.render('kanye', {quote, source, url});
+/* Get Dad joke from API */
+router.get('/jokes', asyncHandler(async(req, res) => {
+    const {joke} = await records.getDadJoke();
+    console.log(joke);
+    const url = helpers.cleanURL(req.originalUrl);
+    res.render('jokes', {joke, url});
 }));
 
 /* Get random advice page */

@@ -15,13 +15,13 @@ html.single-page(lang='en')
                 else
                     img.card-img(src="../static/img/grid_03.jpg" alt="picture")
                     .card-img-overlay.card-img-overlay-inspiration.d-flex.align-items-center.flex-column.bg-light
-                        h3.card-title.font-italic "#{quote.body}"
+                        h4.font-italic "#{quote.body}"
                         p.card-text #{quote.source}
             if url == 'inspiration'
                 div(class="btn-group mt-5" role="group")
                     a(href=`/${url}`).btn.btn-info.btn-secondary.my-auto.p-3.capitalize More #{url}
                     a(href='/inspiration-all').btn.btn-info.btn-secondary.my-auto.p-3.capitalize View All
-            else if url == 'advice' || 'kanye'
+            else if url == 'advice' || 'jokes'
                 div(class="btn-group mt-5" role="group")
                     a(href=`/${url}`).btn.btn-info.btn-secondary.my-auto.p-3.capitalize More #{url}
         include includes/body-scripts
