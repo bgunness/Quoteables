@@ -39,9 +39,9 @@ html(lang='en')
         include includes/header
         .container
             .row
-                .col.d-flex.flex-column.justify-content-start.align-items-center.pt-md-2.pt-lg-5.bg-light
+                .col.d-flex.flex-column.justify-content-start.align-items-center.pt-lg-3.bg-light
                     include includes/error
-                .col-sm-12.col-lg-6.pt-1.pt-sm-3.pt-md-5.bg-light
+                .col-sm-12.col-lg-6.pt-1.pt-sm-3.bg-light
                     .container.min-vh-100.d-flex.justify-content-start.flex-column
                         .d-sm-flex.mb-5.mb-sm-3.mb-lg-5.justify-content-center.align-items-center(style="text-align: center")
                             form.pb-sm-5.form-inline.mt-2.mt-lg-0(action="/inspiration-all-search" method="post")
@@ -63,7 +63,7 @@ html(lang='en')
                                     .col.col-sm.text-center.pt-5.user-select-none
                                         h4.source #{quote.dataValues.source}
                                 hr
-                .col.pt-lg-5.bg-light.d-flex.justify-content-center
+                .col.pt-lg-3.bg-light.d-flex.justify-content-center
                     form(action="/new" method="get")
                         button.btn.btn-success.my-2.mx-1.my-sm-0 Create New
             include includes/body-scripts
