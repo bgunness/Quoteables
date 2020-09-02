@@ -43,11 +43,15 @@
     margin-bottom: 0;
 }
 
-/* ----- Inspiration route ----- */
-.card-img-overlay-inspiration {
+/* ----- Card formatting ----- */
+.card {
+    border: none;
+    border-radius: 20px;
+}
+
+.card-img-overlay {
     text-align: center;
     color: black;
-    background-color: white;
     width: 98%;
     height: 100%;
     margin: auto;
@@ -59,15 +63,14 @@
     border-radius: 20px;
 }
 
-.quote-card {
+#quote-card {
     width: 300px;
+    height: 300px;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
 }
 
-.container-one-quote {
-    height: calc(100vh - 200px);
-}
-
-.yes {
+.user-quote {
     position: relative;
 }
 
@@ -86,15 +89,10 @@
     top: 40%;
 }
 
-/* ----- Index ----- */
-.card-img-overlay {
-    border-radius: 20px;
-}
-
 /* ----- New Quote ----  */
 .new-quote-form {
     width: 100%;
-    max-width: 500px;   /* will need to optimize for mobile */
+    max-width: 500px;
 }
 
 .new-quote-form .input-body {
@@ -135,11 +133,6 @@
 .hover {
     box-shadow: 0px 0px 10px 1px;
     transition: box-shadow 200ms;
-}
-
-.card {
-    border: none;
-    border-radius: 20px;
 }
 
 .row {

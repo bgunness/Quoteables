@@ -1,4 +1,4 @@
-    $('.yes').click(function() {             
+    $('.user-quote').click(function() {             
         $('.overlay').hide();
         var hiddenDiv = $(this).find('.overlay')                           //Cannot be arrow function for 'this' to work!
         if(!($(hiddenDiv).is(':visible'))) {
@@ -9,7 +9,7 @@
     })
 
 $('html').click(function(e) {
-    if(!($(e.target).parents('.yes').length) > 0 ) {
+    if(!($(e.target).parents('.user-quote').length) > 0 ) {
         $('.overlay').fadeOut(100);
     }
 })
@@ -43,7 +43,7 @@ $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
 });
 
 // Add hover animation to quote cards
-$('.yes').hover(function() {
+$('.user-quote').hover(function() {
     $(this).addClass('hover')
 }, function () {
     $(this).removeClass('hover')
@@ -56,6 +56,7 @@ $('.index-card').hover(function() {
     $(this).removeClass('hover')
 })
 
+// 404 page animation
 $('.bi-emoji-dizzy').css({
     'transition': 'transform 5s',
     'transform':"rotate(360deg)"
