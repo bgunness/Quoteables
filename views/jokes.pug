@@ -2,17 +2,15 @@ doctype html
 html.single-page(lang='en')
     include includes/head
     body.bg-light.d-flex.flex-column.single-page.justify-content-between
-        .row
-            .col
-                include includes/header
-        .container.d-flex.flex-column.align-items-center.justify-content-center.mt-5
+        include includes/header
+        .container.d-flex.flex-column.align-items-center.justify-content-center
             .card.quote-card
                 img.card-img(src="../static/img/grid_03.jpg" alt="picture")
                 .card-img-overlay.card-img-overlay-inspiration.d-flex.align-items-center.flex-column.bg-light
                     h4.font-italic "#{joke}"
                     p.card-text #{source}
             if url == 'advice' || 'jokes'
-                div(class="btn-group mt-5" role="group")
+                div.btn-group.mt-5(role="group")
                     a(href=`/${url}`).btn.btn-info.btn-secondary.my-auto.p-3.capitalize More #{url}
         include includes/body-scripts
         include includes/footer

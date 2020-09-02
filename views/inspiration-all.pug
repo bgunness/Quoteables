@@ -26,12 +26,12 @@ html(lang='en')
                         form.d-flex.flex-column(action="/inspiration-all" method="post")
                             .input-group
                                 .input-group-prepend
-                                    span(class="input-group-text") Body
-                                textarea(class="form-control input-body" name="body" placeholder="Body of Quote" aria-label="Body text" value="body")
+                                    span.input-group-text Body
+                                textarea.form-control.input-body(name="body" placeholder="Body of Quote" aria-label="Body text" value="body")
                             .input-group
                                 .input-group-prepend
-                                    span(class="input-group-text") Source
-                                textarea(class="form-control input-source" name="source" placeholder="Author" aria-label="Source text")
+                                    span.input-group-text Source
+                                textarea.form-control.input-source(name="source" placeholder="Author" aria-label="Source text")
                             input#submitQuoteId(type="hidden" name="id")
                             .btn-group.align-self-center
                                 button.btn.btn-info.modal-submit-btn(type='submit') Save changes
@@ -55,10 +55,10 @@ html(lang='en')
                                 .row
                                     .overlay
                                         .btn-group
-                                            button(type="button" class="btn btn-info btn-edit" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalEditQuote" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
-                                            button(type="button" class="btn btn-danger btn-delete" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalDeleteQuote") Delete
+                                            button.btn.btn-info.btn-edit(type="button" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalEditQuote" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
+                                            button.btn.btn-danger.btn-delete(type="button" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalDeleteQuote") Delete
                                     .col.col-sm.text-center.user-select-none
-                                        h4(class="quote") "#{quote.dataValues.body}"
+                                        h4.quote "#{quote.dataValues.body}"
                                 .row
                                     .col.col-sm.text-center.pt-5.user-select-none
                                         h4.source #{quote.dataValues.source}

@@ -9,7 +9,7 @@ html.single-page(lang='en')
                 .card-img-overlay.card-img-overlay-inspiration.d-flex.align-items-center.flex-column.bg-light
                     h4.font-italic "#{advice.slip.advice}"
             if url == 'advice' || 'jokes'
-                div(class="btn-group mt-5" role="group")
+                .btn-group.mt-5(role="group")
                     a(href=`/${url}`).btn.btn-info.btn-secondary.my-auto.p-3.capitalize More #{url}
         include includes/body-scripts
         include includes/footer

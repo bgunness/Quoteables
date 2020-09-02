@@ -7,12 +7,12 @@ html.single-page(lang='en')
             form.new-quote-form.d-flex.flex-column.justify-content-center(action="/new-submit", method="post")
                 .input-group
                     .input-group-prepend
-                        span(class="input-group-text") Body
-                    textarea(class="form-control input-body" name="body" placeholder="Body of Quote" aria-label="Body text" value="body")
+                        span.input-group-text Body
+                    textarea.form-control.input-body(name="body" placeholder="Body of Quote" aria-label="Body text" value="body")
                 .input-group.mt-2
                     .input-group-prepend
-                        span(class="input-group-text") Source
-                    textarea(class="form-control input-source" name="source" placeholder="Author" aria-label="Source text")
+                        span.input-group-text Source
+                    textarea.form-control.input-source(name="source" placeholder="Author" aria-label="Source text")
                 input(type="hidden" name="id")
                 .btn-group.align-self-center.mt-5
                     button.btn.btn-info.modal-submit-btn(type='submit') Save changes
