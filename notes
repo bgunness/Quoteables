@@ -136,5 +136,8 @@
         -u root, no pass
 **
 
-
+9/2/2020
+    Want to add character limit to user created quotes on 'inspiration' route
+        - if over, view rest on 'view-all' route
+        - 
         

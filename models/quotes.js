@@ -6,13 +6,9 @@ const moment = require('moment');
 
 module.exports = (sequelize) => {
     class Quote extends Sequelize.Model {
-        publishedAt() {
-            const date = moment(this.createdAt).format('MMMM D, YYYY, h:mma');
-            return date;
-        }
-        shortDescription() {
-            const shortDesc = this.body.length > 200 ? this.body.substring(0, 200) + '...' : this.body;
-            return shortDesc;
+        chopQuote() {
+            const chopped = this.body.length > 240 ? this.body.substring(0, 240) + '...' : this.body;
+            return chopped;
         }
     }
     Quote.init({

@@ -3,7 +3,7 @@ block content-main
     .container.d-flex.flex-column.align-items-center.justify-content-center
         .card#quote-card
             .card-img-overlay.d-flex.align-items-center.flex-column.bg-light
-                h4.font-italic "#{joke}"
+                h5.font-italic "#{joke}"
         if url == 'advice' || 'jokes'
             .btn-group.mt-5(role="group")
                 a(href=`/${url}`).btn.btn-info.btn-secondary.my-auto.p-3.capitalize More #{url}

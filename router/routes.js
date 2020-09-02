@@ -72,16 +72,16 @@ router.post('/inspiration-all', asyncHandler(async(req, res) => {
 
 /* Post search bar parameters */
 router.post('/inspiration-all-search', asyncHandler(async(req, res) => {
-    if (req.body.source == '') {                        //Searching an empty string returns all the quotes       //functions as expected, throws generic error
+    if (req.body.source == '' || ' ') {                        //Searching an empty string returns all the quotes
         res.redirect('inspiration-all')
     } else {
         try {
             const quotes = await Quote.findAll({
                 where: {
                     source: {
-                        [Op.or] : {
+                        [Op.or] : {                             //Search db for source with first or last name matching
                             [Op.startsWith] : `${req.body.source}`,
-                            [Op.endsWith] : `${req.body.source}`   //To search regardless of accidental spaces around the 'source' value and capitalization
+                            [Op.endsWith] : `${req.body.source}`
                         }
                     }
                 }

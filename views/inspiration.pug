@@ -10,7 +10,7 @@ block content-main
                         |   page!
             else
                 .card-img-overlay.d-flex.align-items-center.flex-column.bg-light
-                    h4.font-italic "#{quote.body}"
+                    h5.font-italic "#{quote.chopQuote()}"
                     p.card-text #{quote.source}
         if url == 'inspiration'
             div(class="btn-group mt-5" role="group")

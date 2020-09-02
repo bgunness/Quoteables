@@ -4,7 +4,7 @@ const http = require('http');
 
 function getDadJoke() {
     return new Promise((resolve, reject) => {
-        var request = https.get('https://icanhazdadjoke.com/', {'headers': {'accept': 'application/json'}}, function(res) {
+        var request = https.get('https://icanhazdadjoke.com/', {'headers': {'accept': 'application/json'}}, (res) => {
             var body = "";
     
             res.on('data', function(chunk) {
@@ -21,7 +21,7 @@ function getDadJoke() {
 
 function getAdvice() {
     return new Promise((resolve, reject) => {
-        var request = https.get('https://api.adviceslip.com/advice', (res) => {
+        var request = https.get('https://api.adviceslip.com/advice', {'headers': {'content-type': 'text/html; charset=utf-8'}}, (res) => {
             var body = "";
 
             res.on('data', (chunk) => {
