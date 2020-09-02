@@ -74,19 +74,27 @@ router.post('/inspiration-all', asyncHandler(async(req, res) => {
 router.post('/inspiration-all-search', asyncHandler(async(req, res) => {
     if (req.body.source == '') {                        //Searching an empty string returns all the quotes       //functions as expected, throws generic error
         res.redirect('inspiration-all')
-    }
-    const quotes = await Quote.findAll({
-        where: {
-            source: {
-                [Op.substring] : `${req.body.source}`   //To search regardless of accidental spaces around the 'source' value and capitalization
-            }
-        }
-    })
-    if (quotes.length === 0) {
-        const msg = true
-        res.render('inspiration-all', {quotes, msg})
     } else {
-        res.render('inspiration-all', {quotes})
+        try {
+            const quotes = await Quote.findAll({
+                where: {
+                    source: {
+                        [Op.or] : {
+                            [Op.startsWith] : `${req.body.source}`,
+                            [Op.endsWith] : `${req.body.source}`   //To search regardless of accidental spaces around the 'source' value and capitalization
+                        }
+                    }
+                }
+            })
+            if (quotes.length === 0) {
+                const msg = true
+                res.render('inspiration-all', {quotes, msg})
+            } else {
+                res.render('inspiration-all', {quotes})
+            }
+        } catch (err) {
+            console.log(err)
+        }
     }
 }))
 
