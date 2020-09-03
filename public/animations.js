@@ -9,7 +9,7 @@
     })
 
 $('html').click(function(e) {
-    if(!($(e.target).parents('.user-quote').length) > 0 ) {
+    if(!($(e.target).parents('.user-quote').length) > 0 ) {                 //If anything except .user-quote clicked
         $('.overlay').fadeOut(100);
     }
 })

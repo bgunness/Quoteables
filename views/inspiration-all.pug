@@ -58,11 +58,11 @@ html(lang='en')
                                             button.btn.btn-info.btn-edit(type="button" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalEditQuote" data-body=`${quote.dataValues.body}` data-source=`${quote.dataValues.source}`) Edit
                                             button.btn.btn-danger.btn-delete(type="button" data-id=`${quote.dataValues.id}` data-toggle="modal" data-target="#modalDeleteQuote") Delete
                                     .col.col-sm.text-center.user-select-none
-                                        h4.quote "#{quote.dataValues.body}"
+                                        h5.quote "#{quote.dataValues.body}"
                                 .row
                                     .col.col-sm.text-center.pt-5.user-select-none
-                                        h4.source #{quote.dataValues.source}
-                                hr
+                                        h6.source #{quote.dataValues.source}
+                                    hr.w-100
                 .col.pt-lg-3.bg-light.d-flex.justify-content-center
                     form(action="/new" method="get")
                         button.btn.btn-success.my-2.mx-1.my-sm-0 Create New

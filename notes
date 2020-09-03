@@ -110,7 +110,7 @@
             - prepare for omission of commas, periods, for longer names
     *BUG*
         - clicking at very bottom of quote within 'inspiration-all' doesn't apply overlay div 
-        - issue is with selecting parents of e.target, 'yes' is not a parent of itself
+        - issue is with selecting parents of e.target, 'user-quote' is not a parent of itself
     *BUG*
         - searching is overly sensitive, searching for any character in the source name returns that source
             - 'a' should return nothing
@@ -139,5 +139,5 @@
 9/2/2020
     Want to add character limit to user created quotes on 'inspiration' route
         - if over, view rest on 'view-all' route
-        - 
+    Add message/link to view longer quotes on 'view all' page 
         
